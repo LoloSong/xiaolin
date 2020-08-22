@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "tar-bar": "/components/tab-bar/index"
+  }
+}

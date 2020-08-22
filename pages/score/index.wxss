@@ -1,0 +1,117 @@
+/* pages/score/index.wxss */
+page {
+  background-color: #74c3c1;
+  padding-bottom: 114rpx;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .score_list_box {
+  width: 676rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 58rpx 68rpx;
+  margin-top: 54rpx;
+  box-shadow: 0 0 10rpx 5rpx rgba(0, 0, 0, 0.05);
+}
+.container .score_list_box .item {
+  margin-bottom: 34rpx;
+}
+.container .score_list_box .item .subject_title {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 22rpx;
+}
+.container .score_list_box .item .subject_answer {
+  display: flex;
+  justify-content: center;
+}
+.container .score_list_box .item .subject_answer .answer {
+  margin-left: 30rpx;
+}
+.container .score_list_box .item .subject_answer .answer:first-child {
+  margin-left: 0rpx;
+}
+.container .score_list_box .item .subject_answer .selected {
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #6fc2bd;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .score_list_box .item:last-child {
+  margin-bottom: 0rpx;
+}
+.container .message {
+  width: 676rpx;
+  height: 562rpx;
+  background-color: #fff;
+  margin-top: 114rpx;
+  margin-bottom: 150rpx;
+}
+.container .message .title {
+  color: #7d7d7d;
+  margin-top: 26rpx;
+  text-align: center;
+}
+.container .message .messgae_area {
+  width: 536rpx;
+  height: 242rpx;
+  margin: 52rpx auto 0rpx;
+  background-color: #f2f2f2;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  padding: 38rpx;
+}
+.container .message .messgae_area textarea {
+  width: 100%;
+  height: 100%;
+  color: #7d7d7d;
+}
+.container .message .is_anony {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.container .message .is_anony .check_box {
+  width: 22rpx;
+  height: 22rpx;
+  border-radius: 2rpx;
+  background-color: #e6e6e6;
+  margin-left: 80rpx;
+  margin-right: 18rpx;
+}
+.container .message .is_anony .active_box {
+  background-color: #91ccc8;
+}
+.container .message .is_anony .anony_tip {
+  font-size: 24rpx;
+  color: #7d7d7d;
+}
+.container .message .btn_box {
+  width: 592rpx;
+  margin-left: 42rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50rpx;
+  color: #6f8d8b;
+  font-size: 28rpx;
+}
+.container .message .btn_box .btn {
+  width: 178rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 12rpx;
+}
+.container .message .btn_box .btn_back {
+  background-color: #f7f7f7;
+}
+.container .message .btn_box .comfirm {
+  background-image: linear-gradient(to bottom, #b2dbd8, #6fbdb9);
+}

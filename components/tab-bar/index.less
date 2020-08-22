@@ -1,0 +1,31 @@
+.tab_bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0rpx -2rpx 8rpx 2rpx rgba(0, 0, 0, 0.05);
+  border-radius: 48rpx 48rpx 0rpx 0rpx;
+  overflow: hidden;
+  .tab_bar_inner{
+    padding-top: 26rpx;
+    padding-bottom: 8rpx;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    .tab_bar_item{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .bar_img{
+        width: 54rpx;
+        height: 54rpx;
+      }
+      .bar_text{
+        font-size: 20rpx;
+        margin-top: 4rpx;
+      }
+    }
+  }
+}

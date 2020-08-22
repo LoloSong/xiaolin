@@ -1,0 +1,80 @@
+<!--pages/school-home/index.wxml-->
+<view class="container">
+  <view class="user_top">
+    <view class="top_img_box">
+      <image src="/images/top.png" />
+    </view>
+    <view class="top_con">
+      <view class="con_title f_30">清华大学</view>
+      <view class="avatar_box">
+        <view class="icon_avatar">
+          <image src="" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tab_box">
+    <view class="tab tab_first"><view class="tab_inner box_shadow active_tab">评分</view></view>
+    <view class="tab"><view class="tab_inner box_shadow">相册</view></view>
+    <view class="tab tab_first"><view class="tab_inner box_shadow">简介</view></view>
+  </view>
+  <view class="tab_content">
+    <view class="tab_con_box score_wrapper none">
+      <view class="tap f_30">综合分数  <text>4.7</text></view>
+      <view class="con_tab_item box_shadow b_r">
+        <view class="avatar box_shadow"><image src="" /></view>
+        <view class="message">留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</view>
+        <view class="score_box">
+          <view class="score">
+            <circular-progress-view class="answer" data-index="{{3}}" percent="{{60}}" progressSize="{{72}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+              <view class="score_text">4.7</view>
+            </circular-progress-view>
+          </view>
+          <view class="score_btn_box">
+            <view class="btn btn_weixin"><image src="/images/weixin.png" /></view>
+            <view class="btn btn_thumbs">
+              <image src="/images/heart.png" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="tab_con_box pic_box b_r none">
+      <view class="pic" wx:for="{{8}}"><image src="" /></view>
+      <view class="pic">
+        <view class="dot"></view>
+        <view class="dot"></view>
+        <view class="dot"></view>
+      </view>
+    </view>
+    <view class="tab_con_box message_box b_r box_shadow">
+      <textarea maxlength="120"></textarea>
+      <view class="max_length">请输入80-120字</view>
+    </view>
+  </view>
+</view>
+<view class="subject_popup" hidden="{{true}}">
+  <view class="popup_con">
+    <subject-list></subject-list>
+  </view>
+  <view class="mask"></view>
+</view>
+<!-- <view class="message_popup">
+  <view class="popup_con">
+    <view class="message_con box_shadow b_r">
+      <view class="message_item">
+        <view class="avatar">
+          <image src="" />
+        </view>
+        <view class="message_box">
+
+        </view>
+        <view class="avatar">
+          <image src="" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mask"></view>
+</view> -->
+<tab-bar selected="{{-1}}"></tab-bar>

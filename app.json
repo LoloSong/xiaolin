@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/score/index",
+    "pages/user/index",
+    "pages/login/index",
+    "pages/school/index",
+    "pages/user-modify/index",
+    "pages/school-home/index",
+    "pages/history-score/index"
+  ],
+  "window":{
+    "navigationStyle": "custom",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "custom": true,
+    "backgroundColor": "#ffffff",
+    "color": "#282828",
+    "selectedColor": "#0060FF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home_icon.png",
+        "selectedIconPath": "images/home_active_icon.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/score/index",
+        "iconPath": "images/school_icon.png",
+        "selectedIconPath": "images/school_active_icon.png",
+        "text": "学校评分"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "images/user_icon.png",
+        "selectedIconPath": "images/user_active_icon.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

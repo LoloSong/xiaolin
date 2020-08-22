@@ -1,0 +1,108 @@
+/* pages/user-modify/index.wxss */
+page {
+  background-color: #74c3c1;
+  padding-bottom: 114rpx;
+}
+page .container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+page .container form {
+  margin-top: 300rpx ;
+}
+page .container .form_item {
+  background-color: #fff;
+  width: 686rpx;
+  padding: 50rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+page .container .form_item .seat {
+  width: 100%;
+  height: 100rpx;
+}
+page .container .form_item .edit_box {
+  width: 190rpx;
+  height: 190rpx;
+  position: absolute;
+  top: -85rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+page .container .form_item .edit_box .edit_img {
+  width: 100%;
+  height: 100%;
+}
+page .container .form_item .edit_box .edit {
+  position: absolute;
+  z-index: 10;
+  color: #6c6c6c;
+  font-size: 22rpx;
+  bottom: 35rpx;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+page .container .form_item .ipu_item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  height: 70rpx;
+  padding: 0rpx 30rpx;
+  font-size: 22rpx;
+  color: #acacac;
+  border: 1rpx solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 38rpx;
+  border-radius: 12rpx;
+}
+page .container .form_item .ipu_item input {
+  flex: 1;
+}
+page .container .form_item .ipu_item:last-child {
+  margin-bottom: 0rpx;
+}
+page .container .form_item:last-child {
+  margin-top: 50rpx;
+  margin-bottom: 130rpx;
+}
+page .container .add_school {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 24rpx;
+  color: #acacac;
+  font-size: 26rpx;
+}
+page .container .add_school .iconfont {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  border: 1rpx solid #acacac;
+  text-align: center;
+  line-height: 24rpx;
+  font-size: 20rpx;
+  margin-right: 14rpx;
+}
+page .container .btn_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 34rpx;
+  color: #5d7b79;
+}
+page .container .btn_box .btn {
+  width: 178rpx;
+  height: 56rpx;
+  text-align: center;
+  line-height: 58rpx;
+  font-size: 26rpx;
+  border-radius: 12rpx;
+}
+page .container .btn_box .goBack {
+  border: 1rpx solid rgba(0, 0, 0, 0.1);
+}
+page .container .btn_box .comfirm {
+  background-image: linear-gradient(to bottom, #bddfdc, #77c1bd);
+}

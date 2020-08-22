@@ -1,0 +1,2 @@
+<!--components/nav-bar/index.wxml-->
+<view class="nar_bar" style="height:{{height}}px"></view>

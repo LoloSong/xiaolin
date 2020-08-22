@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="container bg">
+  <view class="search_box">
+    <view class="search">
+      <view class="ipu_left"><input placeholder="搜索母校名称，例如：清华大学" type="text"/></view>
+      <view class="btn_search"><text class="iconfont icon-icon161603"></text></view>
+    </view>
+    <view class="search_result">
+      <view class="result_item" wx:for="{{5}}">北京大学</view>
+    </view>
+  </view>
+  <view class="gray_logo">
+    <view class="logo">
+      <image src="/images/logo_gray.png" />
+    </view>
+  </view>
+  <view class="con_box">
+    <view class="btn_list f_30">热评榜单</view>
+    <view class="ranking_box">
+      <view class="ranking_top">
+        <view class="rank_item rank_two">
+          <view class="avatar"><image src="" /></view>
+          <view class="icon"><image src="/images/circle.png" /></view>
+        </view>
+        <view class="rank_item rank_frist">
+          <view class="avatar"><image src="" /></view>
+          <view class="icon"><image src="/images/circle.png" /></view>
+        </view>
+        <view class="rank_item rank_three">
+          <view class="avatar"><image src="" /></view>
+          <view class="icon"><image src="/images/circle.png" /></view>
+        </view>
+      </view>
+      <view class="ranking_img">
+        <image src="/images/bg_ranking.png" />
+      </view>
+    </view>
+    <view class="list_box">
+      <view class="list_item" wx:for="{{10}}">
+        1、哥伦比亚大学
+      </view>
+    </view>
+  </view>
+</view>
+<tab-bar selectd="{{0}}"/>

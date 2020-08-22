@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "circular-progress-view":"../circularProgressView/index"
+  }
+}

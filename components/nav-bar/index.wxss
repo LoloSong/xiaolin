@@ -1,0 +1,4 @@
+/* components/nav-bar/index.wxss */
+.nar_bar{
+    width: 100%;
+}

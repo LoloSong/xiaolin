@@ -1,0 +1,21 @@
+<scroll-view
+ class="scroll-content"
+ scroll-y
+ style="height:{{scrollHeight}}px;position:relative;{{cusStyle}}"
+ bind:scrolltolower="onTolower"
+ bind:touchstart="touchstart"
+ bind:touchend="touchmove"
+>
+	<slot/>
+	<view class="push-loading-content bottom-class" wx:if="{{showBottomInfo}}">
+		<my-loading
+		 wx:if="{{pushLoading}}"
+		 type="circle"
+		 ext-class="loading-view"
+		 tips="{{pushLoadingText}}"
+		/>
+		<text wx:else selectable="false" space="false" decode="false">{{pushLoadingText}}</text>
+	</view>
+	<!-- 以下一行代码为解决内容过少时无法下拉刷新 -->
+	<view style="width:2rpx;height:2rpx;bottom:-2rpx;position:absolute;" />
+</scroll-view>

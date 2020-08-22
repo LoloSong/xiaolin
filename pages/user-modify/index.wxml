@@ -1,0 +1,49 @@
+<!--pages/user-modify/index.wxml-->
+<view class="container">
+  <form >
+    <view class="form_item form_first_item box_shadow b_r">
+      <view class="edit_box">
+        <view class="edit_img">
+          <image src="/images/head.png" />
+        </view>
+        <view class="edit">点击编辑</view>
+      </view>
+      <view class="seat"></view>
+      <view class="ipu_item box_shadow">
+        <input type="text" placeholder="姓名"/>
+        <view class="ipu_right">请填写真实姓名</view>
+      </view>
+      <view class="ipu_item box_shadow">
+        <input type="text" placeholder="名字"/>
+      </view>
+      <view class="ipu_item box_shadow">
+        <input type="text" placeholder="性别"/>
+      </view>
+      <view class="ipu_item box_shadow">
+        <input type="text" placeholder="生日"/>
+      </view>
+    </view>
+    <view class="form_item form_first_item box_shadow b_r">
+      <blcoK>
+        <view class="ipu_item box_shadow">
+          <input type="text" placeholder="学校"/>
+        </view>
+        <view class="ipu_item box_shadow">
+          <input type="text" placeholder="学历"/>
+        </view>
+        <view class="ipu_item box_shadow">
+          <input type="text" placeholder="在校时间"/>
+        </view>
+      </blcoK>
+      <view class="add_school">
+        <text class="iconfont icon-addTodo-nav"></text>
+        <text>新增院校</text>
+      </view>
+      <view class="btn_box">
+        <view class="goBack box_shadow btn">返回</view>
+        <view class="comfirm btn">提交</view>
+      </view>
+    </view>
+  </form>
+</view>
+<tab-bar selected="{{2}}"></tab-bar>

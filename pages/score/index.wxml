@@ -1,0 +1,42 @@
+<!--pages/score/index.wxml-->
+<view class="status_bar" style="height:{{height}}px"></view>
+<view class="container">
+  <view class="tap f_30 box_shadow">校园生活评分</view>
+  <view class="score_list_box b_r">
+    <view class="item">
+      <view class="subject_title">1、学生会（Student Association）</view>
+      <view class="subject_answer">
+        <circular-progress-view class="answer" data-index="{{1}}" percent="{{20}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+          <view class="selected"></view>
+        </circular-progress-view>
+        <circular-progress-view class="answer" data-index="{{2}}" percent="{{40}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+          <view class="selected"></view>
+        </circular-progress-view>
+        <circular-progress-view class="answer" data-index="{{3}}" percent="{{60}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+          <view class="selected"></view>
+        </circular-progress-view>
+        <circular-progress-view class="answer" data-index="{{4}}" percent="{{80}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+          <view class="selected"></view>
+        </circular-progress-view>
+        <circular-progress-view class="answer" data-index="{{5}}" percent="{{98}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+          <view class="selected"></view>
+        </circular-progress-view>
+      </view>
+    </view>
+  </view>
+  <view class="message box_shadow b_r">
+    <view class="title f_30">留言板</view>
+    <view class="messgae_area b_r">
+      <textarea maxlength="500" placeholder="请输入500字以内"></textarea>
+    </view>
+    <view class="is_anony">
+      <view class="check_box active_box"></view>
+      <view class="anony_tip">匿名发布</view>
+    </view>
+    <view class="btn_box">
+      <view class="btn btn_back box_shadow">返回</view>
+      <view class="btn comfirm">提交</view>
+    </view>
+  </view>
+</view>
+<tab-bar selected="{{1}}"></tab-bar>

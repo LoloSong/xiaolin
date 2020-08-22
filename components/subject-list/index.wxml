@@ -1,0 +1,34 @@
+<!--components/subject/index.wxml-->
+<view class="user_con">
+    <view class="con box_shadow b_r">
+      <view class="user_tip_box">
+        <view class="user_tip">xxx大学</view>
+        <view class="message">留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</view>
+        <view class="score">
+          <circular-progress-view class="answer" percent="{{72}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+            <view class="score">4.2分</view>
+          </circular-progress-view>
+        </view>
+      </view>
+      <view class="item">
+        <view class="subject_title">1、学生会（Student Association）</view>
+        <view class="subject_answer">
+          <circular-progress-view class="answer" data-index="{{1}}" percent="{{20}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+            <view class="selected"></view>
+          </circular-progress-view>
+          <circular-progress-view class="answer" data-index="{{2}}" percent="{{40}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+            <view class="selected"></view>
+          </circular-progress-view>
+          <circular-progress-view class="answer" data-index="{{3}}" percent="{{60}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+            <view class="selected"></view>
+          </circular-progress-view>
+          <circular-progress-view class="answer" data-index="{{4}}" percent="{{80}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+            <view class="selected"></view>
+          </circular-progress-view>
+          <circular-progress-view class="answer" data-index="{{5}}" percent="{{98}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+            <view class="selected"></view>
+          </circular-progress-view>
+        </view>
+      </view>
+    </view>
+  </view>

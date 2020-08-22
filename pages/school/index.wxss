@@ -1,0 +1,100 @@
+/* pages/school/index.wxss */
+page {
+  background-color: #74c3c1;
+  padding-bottom: 114rpx;
+}
+.search_box {
+  width: 520rpx;
+  margin-top: 224rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  box-sizing: border-box;
+  box-shadow: 0 0 10rpx 5rpx rgba(0, 0, 0, 0.05);
+  padding: 0 26rpx;
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #808080;
+}
+.search_box .ipu_box {
+  flex: 1;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .swiper_box {
+  width: 520rpx;
+  margin-top: 70rpx;
+  height: 860rpx;
+}
+.container .swiper_box swiper {
+  height: 100%;
+}
+.container .swiper_box .swiper-item {
+  width: 100%;
+  height: 790rpx;
+  background-color: #f5f5f5;
+}
+.container .btn_box {
+  width: 520rpx;
+  margin-top: 96rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+.container .btn_box .btn {
+  width: 178rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 12rpx;
+}
+.container .btn_box .goBack {
+  background-image: linear-gradient(to bottom, #fff, #74c3c1);
+}
+.container .btn_box .comfirm {
+  background-color: #fff;
+  box-shadow: 0 0 10rpx 5rpx rgba(0, 0, 0, 0.05);
+  color: #808080;
+}
+.popup-slot {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.popup-slot .popup_box {
+  width: 520rpx;
+  height: 540rpx;
+  background-color: #e6e6e6;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 224rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 0 10rpx 5rpx rgba(0, 0, 0, 0.05);
+}
+.popup-slot .popup_box .search_box {
+  margin-top: 0;
+}
+.popup-slot .popup_box .search_list .list_item {
+  padding: 26rpx;
+  font-size: 24rpx;
+  color: #808080;
+}
+.wx-swiper-dot {
+  width: 20rpx!important;
+  display: inline-flex;
+  height: 20rpx!important;
+  border-radius: 4rpx!important;
+  margin-left: 24rpx!important;
+  justify-content: space-between;
+}

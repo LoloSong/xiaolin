@@ -1,0 +1,14 @@
+<!--components/circularProgressView/index.wxml-->
+<view class="progressWrap progress--bg" style="font-size: {{progressSize}}rpx; background-color:{{loopBg}};">
+	<block wx:if="{{percent < 50}}">
+		<view class="progressWrap__son progressWrap__son--right" style="transform: rotate({{percent*3.6}}deg) !important;background-color:{{progressBg}} !important;"></view>
+		<view class="progressWrap__son progressWrap__son--left" style="background-color:{{progressBg}} !important;"></view>
+	</block>
+	<block wx:else>
+		<view class="progressWrap__son progressWrap__son--right" style="background-color:{{loopBg}};"></view>
+		<view class="progressWrap__son progressWrap__son--left" style="transform: rotate({{(percent-50)*3.6}}deg) !important;background-color:{{progressBg}}; !important"></view>
+	</block>
+	<view wx:if="{{content}}" class="progressWrap__content" style="font-size: {{progressSize-loopSize}}rpx;background-color:{{contentBg}};">
+		<slot></slot>
+	</view>
+</view>

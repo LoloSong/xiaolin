@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tab-bar": "/components/tab-bar/index",
+    "circular-progress-view":"/components/circularProgressView/index"
+  }
+}
