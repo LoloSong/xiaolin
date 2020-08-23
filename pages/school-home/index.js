@@ -5,7 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabIndex: 0
+    tabIndex: 0,
+    subjectList:[
+      {
+        title:'学生会（Student Association',
+        answer:''
+      },
+      {
+        title:'颜值（Appearance）',
+        answer:''
+      }
+    ],
   },
 
   /**
@@ -19,6 +29,20 @@ Page({
     console.log(e)
     this.setData({
       tabIndex: e.currentTarget.dataset.index
+    })
+  },
+  /** 答题 */
+  goAnswer: function (e) {
+    console.log(e)
+    let that = this,data = e.detail.data;
+    let newList = that.data.subjectList.map((item, index) => {
+      if (index == data.index) {
+        item.answer = data.answer
+      }
+      return item
+    })
+    this.setData({
+      subjectList: newList
     })
   },
   /**

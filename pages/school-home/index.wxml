@@ -1,5 +1,5 @@
 <!--pages/school-home/index.wxml-->
-<view class="container">
+<view class="wrapper">
   <view class="user_top">
     <view class="top_img_box">
       <image src="/images/top.png" />
@@ -53,9 +53,26 @@
     </view>
   </view>
 </view>
-<view class="subject_popup" hidden="{{true}}">
+<view class="subject_popup">
   <view class="popup_con">
-    <subject-list></subject-list>
+    <view class="user_con">
+      <view class="con box_shadow b_r">
+        <view class="user_tip_box">
+          <view class="user_tip">xxx大学</view>
+          <view class="message">留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</view>
+          <view class="score">
+            <circular-progress-view class="answer" percent="{{72}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+              <view class="score">4.2分</view>
+            </circular-progress-view>
+          </view>
+        </view>
+        <block>
+          <block wx:for="{{subjectList}}" wx:key="index">
+            <subject-item item="{{item}}" index="{{index}}" bind:goAnswer="goAnswer"></subject-item>
+          </block>
+        </block>
+      </view>
+    </view>
   </view>
   <view class="mask"></view>
 </view>
