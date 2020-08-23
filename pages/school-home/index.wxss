@@ -36,6 +36,10 @@ page {
   margin-top: 16rpx;
   position: relative;
 }
+.wrapper .user_top .top_con .avatar_box .school_logo {
+  border-radius: 50%;
+  background: #efefef;
+}
 .wrapper .user_top .top_con .avatar_box .icon_avatar {
   width: 53rpx;
   height: 53rpx;
@@ -64,13 +68,13 @@ page {
   border-radius: 50%;
   color: #b0b0b0;
 }
+.wrapper .tab_box .tab .tab_inner.active_tab {
+  background-image: linear-gradient(to bottom, #b5dcd9, #6ebdb9);
+  color: #556d6b;
+}
 .wrapper .tab_box .tab_first {
   position: relative;
   top: -80rpx;
-}
-.wrapper .tab_box .active_tab {
-  background-image: linear-gradient(to bottom, #b5dcd9, #6ebdb9);
-  color: #556d6b;
 }
 .wrapper .tab_content {
   margin-bottom: 60rpx;

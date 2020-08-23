@@ -27,12 +27,12 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.1",
-	"appid": "wx7bd60bd40e8b811e",
+	"appid": "wx322f79c0514e6cc6",
 	"projectname": "school",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -83,6 +83,13 @@
 					"name": "个人编辑页",
 					"pathName": "pages/user-modify/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学校首页",
+					"pathName": "pages/school-home/index",
+					"query": "id=1",
 					"scene": null
 				}
 			]

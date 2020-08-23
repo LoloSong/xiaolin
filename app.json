@@ -1,12 +1,12 @@
 {
   "pages":[
     "pages/login/index",
+    "pages/school/index",
     "pages/index/index",
     "pages/school-home/index",
     "pages/user/index",
-    "pages/score/index",
     "pages/user-modify/index",
-    "pages/school/index",
+    "pages/score/index",
     "pages/history-score/index"
   ],
   "window":{

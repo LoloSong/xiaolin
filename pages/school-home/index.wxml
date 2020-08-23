@@ -2,11 +2,12 @@
 <view class="wrapper">
   <view class="user_top">
     <view class="top_img_box">
-      <image src="/images/top.png" />
+      <image src="https://api.collegein.com/images/top.png" />
     </view>
     <view class="top_con">
-      <view class="con_title f_30">清华大学</view>
+      <view class="con_title f_30">{{ name }}</view>
       <view class="avatar_box">
+        <image class="school_logo" src="{{ logo }}" />
         <view class="icon_avatar">
           <image src="" />
         </view>
@@ -20,7 +21,7 @@
   </view>
   <view class="tab_content">
     <view class="tab_con_box score_wrapper" wx:if="{{tabIndex == 0}}">
-      <view class="tap f_30">综合分数  <text>4.7</text></view>
+      <view class="tap f_30">综合分数<text>{{ score }}</text></view>
       <view class="con_tab_item box_shadow b_r">
         <view class="avatar box_shadow"><image src="" /></view>
         <view class="message">留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</view>
@@ -40,20 +41,28 @@
       </view>
     </view>
     <view class="tab_con_box pic_box b_r" wx:if="{{tabIndex == 1}}">
-      <view class="pic" wx:for="{{8}}"><image src="" /></view>
-      <view class="pic">
+      <view class="pic"><image wx:if="{{imgList[0]}}" src="{{imgList[0].image}}" /></view>
+      <view class="pic"><image wx:if="{{imgList[1]}}" src="{{imgList[1].image}}" /></view>
+      <view class="pic"><image wx:if="{{imgList[2]}}" src="{{imgList[2].image}}" /></view>
+      <view class="pic"><image wx:if="{{imgList[3]}}" src="{{imgList[3].image}}" /></view>
+      <view class="pic"><image wx:if="{{imgList[4]}}" src="{{imgList[4].image}}" /></view>
+      <view class="pic"><image wx:if="{{imgList[5]}}" src="{{imgList[5].image}}" /></view>
+      <view class="pic"><image wx:if="{{imgList[6]}}" src="{{imgList[6].image}}" /></view>
+      <view class="pic"><image wx:if="{{imgList[7]}}" src="{{imgList[7].image}}" /></view>
+      <view class="pic"><image wx:if="{{imgList[8]}}" src="{{imgList[8].image}}" /></view>
+      <!-- <view class="pic">
         <view class="dot"></view>
         <view class="dot"></view>
         <view class="dot"></view>
-      </view>
+      </view> -->
     </view>
     <view class="tab_con_box message_box b_r box_shadow" wx:if="{{tabIndex == 2}}">
-      <textarea maxlength="120"></textarea>
+      <textarea value="{{desc}}" maxlength="120"></textarea>
       <view class="max_length">请输入80-120字</view>
     </view>
   </view>
 </view>
-<view class="subject_popup">
+<!-- <view class="subject_popup">
   <view class="popup_con">
     <view class="user_con">
       <view class="con box_shadow b_r">
@@ -75,7 +84,7 @@
     </view>
   </view>
   <view class="mask"></view>
-</view>
+</view> -->
 <!-- <view class="message_popup">
   <view class="popup_con">
     <view class="message_con box_shadow b_r">

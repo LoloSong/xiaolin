@@ -8,6 +8,10 @@ Page({
     avatar: '',
     firstName: '',
     lastName: '',
+    sexId: '',
+    sex: '',
+    sexOptions: [{ id: 1, name: '男' }, { id: 2, name: '女' }],
+    birthday: '',
     schoolInfoList:[
       {
         schoolName:'',
@@ -38,5 +42,18 @@ Page({
       lastName: e.detail.value
     })
     console.log(this.data.firstName)
+  },
+  changeSex(e) {
+    const index = e.detail.value
+    console.log(index)
+    this.setData({
+      sexId: this.data.sexOptions[index].id,
+      sex: this.data.sexOptions[index].name
+    })
+  },
+  changeBirthday(e) {
+    this.setData({
+      birthday: e.detail.value
+    })
   }
 })

@@ -3,10 +3,22 @@ let app = getApp()
 Page({
   data: {
     statusBarHei: app.globalData.statusBar,
-    narBarHei: app.globalData.customBar
+    narBarHei: app.globalData.customBar,
+    avatarUrl: '', // 微信头像
+    nickname: ''  // 微信昵称
   },
-  onLoad() {
-    
+  bindGetUserInfo(e) {
+    if (e.detail.userInfo) {
+      this.avatarUrl = e.detail.userInfo.avatarUrl
+      this.nickname = e.detail.userInfo.nickname
+      this.login()
+    } else {
+      wx.showToast({
+        title: '请先完成微信授权',
+        icon: 'none',
+        duration: 2000
+      })
+    }
   },
   login() {
     wx.showLoading({

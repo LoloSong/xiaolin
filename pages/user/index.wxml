@@ -1,6 +1,6 @@
 <!--pages/user/index.wxml-->
 <view class="container">
-  <view class="user_top"><image src="/images/top.png" /></view>
+  <view class="user_top"><image src="https://api.collegein.com/images/top.png" /></view>
   <view class="user_info">
     <view class="user_name">XXX</view>
     <view class="user_tip">xxx大学校友</view>

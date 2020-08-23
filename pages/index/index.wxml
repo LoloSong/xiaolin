@@ -3,11 +3,11 @@
 <view class="container bg">
 	<view class="search_box" style="top:{{statusBarHei}}px">
 		<view class="search">
-			<view class="ipu_left"><input type="text"  vlaue="searchName" placeholder="搜索母校名称，例如：清华大学" placeholder-class="placeholder" confirm-type="search" bindinput="ipuText" bindconfirm="search" /></view>
-			<view class="btn_search" bind:tap="search"><text class="iconfont icon-icon161603"></text></view>
+			<view class="ipu_left"><input type="text"  value="{{searchName}}" placeholder="搜索母校名称，例如：清华大学" placeholder-class="placeholder" confirm-type="search" bindinput="ipuText" bindconfirm="search" /></view>
+			<view class="btn_search" bindtap="search"><text class="iconfont icon-icon161603"></text></view>
 		</view>
 		<view class="search_result" wx:if="{{searchNameList.length !== 0}}">
-			<view class="result_item" wx:for="{{searchNameList}}" wx:key="index">{{ item.name }}</view>
+			<view class="result_item" wx:for="{{searchNameList}}" wx:key="index" bindtap="selectSchool" data-school_id="{{item.id}}" data-school_name="{{item.name}}">{{ item.name }}</view>
 		</view>
 	</view>
 	<view class="gray_logo" style="top:{{statusBarHei}}px">
@@ -49,7 +49,7 @@
 			</view>
 		</view>
 		<view class="list_box">
-			<view class="list_item" wx:for="{{list}}" wx:key="index" bindtap="goSchoolHome" data-scrollId="{{item.id}}">
+			<view class="list_item" wx:for="{{list}}" wx:key="index" bindtap="goSchoolHome" data-school_id="{{item.id}}">
 				{{ index + 1 }}、{{ item.name }}
 			</view>
 		</view>
