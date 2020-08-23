@@ -9,7 +9,7 @@
     <image src="https://api.collegein.com/images/logo.png" />
   </view>
   <view class="bottom_box">
-    <view class="iconfont icon-jiantou"></view>
+    <view class="iconfont icon-jiantou" bindtap="login"></view>
     <view class="lace">
       <image src="https://api.collegein.com/images/lace.png" />
     </view>

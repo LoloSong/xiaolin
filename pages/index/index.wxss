@@ -34,6 +34,9 @@ page {
   color: #b2b2b2;
   font-size: 26rpx;
 }
+.container .search_box .search .ipu_left .placeholder {
+  color: #d5d5d5;
+}
 .container .search_box .search .btn_search .iconfont {
   font-size: 48rpx;
   color: #464646;
