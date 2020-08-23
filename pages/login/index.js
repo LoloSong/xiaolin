@@ -5,6 +5,9 @@ Page({
     statusBarHei: app.globalData.statusBar,
     narBarHei: app.globalData.customBar
   },
+  onLoad() {
+    
+  },
   login() {
     wx.showLoading({
       title: `登录中`,

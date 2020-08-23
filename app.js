@@ -29,7 +29,6 @@ App({
       return
     }
     return new Promise((resolve) => {
-      console.log(url, data)
       wx.request({
         url: `${_this.globalData.baseUrl}${url}`,
         data,

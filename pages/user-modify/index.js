@@ -7,6 +7,7 @@ Page({
   data: {
     avatar: '',
     firstName: '',
+    lastName: '',
     schoolInfoList:[
       {
         schoolName:'',
@@ -34,7 +35,7 @@ Page({
   },
   getLastName(e) {
     this.setData({
-      firstName: e.detail.value
+      lastName: e.detail.value
     })
     console.log(this.data.firstName)
   }

@@ -91,6 +91,9 @@ Page({
       })
     })
   },
+  goSchoolHome(e) {
+    console.log(e)
+  },
 
   
   /**搜索 */

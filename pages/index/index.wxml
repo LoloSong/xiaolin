@@ -49,7 +49,7 @@
 			</view>
 		</view>
 		<view class="list_box">
-			<view class="list_item" wx:for="{{list}}" wx:key="index">
+			<view class="list_item" wx:for="{{list}}" wx:key="index" bindtap="goSchoolHome" data-scrollId="{{item.id}}">
 				{{ index + 1 }}、{{ item.name }}
 			</view>
 		</view>
