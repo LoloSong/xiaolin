@@ -3,16 +3,16 @@
 <view class="container bg">
 	<view class="search_box" style="top:{{statusBarHei}}px">
 		<view class="search">
-			<view class="ipu_left"><input placeholder="搜索母校名称，例如：清华大学" placeholder-class="placeholder" type="text" confirm-type="search" bindinput="ipuText" bindconfirm="search" /></view>
+			<view class="ipu_left"><input type="text"  vlaue="searchName" placeholder="搜索母校名称，例如：清华大学" placeholder-class="placeholder" confirm-type="search" bindinput="ipuText" bindconfirm="search" /></view>
 			<view class="btn_search" bind:tap="search"><text class="iconfont icon-icon161603"></text></view>
 		</view>
-		<view class="search_result" wx:if="{{schoolNameList.length != 0}}">
-			<view class="result_item" wx:for="{{schoolNameList}}" wx:key="{{index}}">{{item}}</view>
+		<view class="search_result" wx:if="{{searchNameList.length !== 0}}">
+			<view class="result_item" wx:for="{{searchNameList}}" wx:key="index">{{ item.name }}</view>
 		</view>
 	</view>
 	<view class="gray_logo" style="top:{{statusBarHei}}px">
 		<view class="logo">
-			<image src="/images/logo_gray.png" />
+			<image src="https://api.collegein.com/images/logo_gray.png" />
 		</view>
 	</view>
 	<view class="con_box" style="margin-top:{{274 + statusBarHei}}px">
@@ -24,7 +24,7 @@
 						<image src="" />
 					</view>
 					<view class="icon">
-						<image src="/images/circle.png" />
+						<image src="https://api.collegein.com/images/circle.png" />
 					</view>
 				</view>
 				<view class="rank_item rank_frist">
@@ -32,7 +32,7 @@
 						<image src="" />
 					</view>
 					<view class="icon">
-						<image src="/images/circle.png" />
+						<image src="https://api.collegein.com/images/circle.png" />
 					</view>
 				</view>
 				<view class="rank_item rank_three">
@@ -40,16 +40,16 @@
 						<image src="" />
 					</view>
 					<view class="icon">
-						<image src="/images/circle.png" />
+						<image src="https://api.collegein.com/images/circle.png" />
 					</view>
 				</view>
 			</view>
 			<view class="ranking_img">
-				<image src="/images/bg_ranking.png" />
+				<image src="https://api.collegein.com/images/bg_ranking.png" />
 			</view>
 		</view>
 		<view class="list_box">
-			<view class="list_item" wx:for="{{list}}" wx:key="this">
+			<view class="list_item" wx:for="{{list}}" wx:key="index">
 				{{ index + 1 }}、{{ item.name }}
 			</view>
 		</view>

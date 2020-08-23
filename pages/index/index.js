@@ -1,18 +1,19 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const util = require('../../utils/util')
 
 Page({
   data: {
     list: [],
     userInfo: {},
     statusBarHei: app.globalData.statusBar,
-    schoolName: '',
-    schoolNameList: []
+    searchName: '',
+    searchNameList: []
   },
   onLoad() {
     this.getList()
-    // app.request('123', '223')
+    this.getIsInfo()
     return
     if (app.globalData.userInfo) {
       this.setData({
@@ -43,7 +44,6 @@ Page({
   },
   getList() {
     app.request('/wechat/school/index').then((res) => {
-      console.log(res)
       if (res.code !== 200) {
         wx.showToast({
           title: res.message,
@@ -57,12 +57,42 @@ Page({
       })
     })
   },
-  /** 文本框输入 */
-  ipuText(e) {
-    this.setData({
-      schoolName: e.detail.value
+  getIsInfo() {
+    app.request('/wechat/member/info/status').then((res) => {
+      if (res.code === 40002) {
+        wx.setStorageSync('isInfo', false)
+      }
     })
   },
+  ipuText(e) {
+    this.setData({
+      searchName: e.detail.value
+    })
+    if (!this.data.searchName) {
+      this.setData({ searchNameList: [] })
+      return
+    }
+    this.searchSchool()
+    // 防抖优化
+    // util.debounce(this.searchSchool)
+  },
+  searchSchool() {
+    app.request('/wechat/school/search', { key: this.data.searchName }).then((res) => {
+      if (res.code !== 200) {
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }
+      this.setData({
+        searchNameList: res.data
+      })
+    })
+  },
+
+  
   /**搜索 */
   search: function () {
 
