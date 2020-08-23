@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    schoolInfoList:[
+      {
+        schoolName:'',
+        education:'',
+        schoolHours:''
+      }
+    ]
   },
 
   /**
@@ -14,7 +20,24 @@ Page({
   onLoad: function (options) {
 
   },
-
+  /**输入学校信息 */
+  ipuSchoolInfo: function (e) {
+    console.log(e.target.dataset)
+    let that = this, data = e.target.dataset,val = e.detail.value;
+    let newList = this.data.schoolInfoList.map((item, index) => {
+      if (index == data.index) {
+         for (let key in item) {
+           if (key == data.tip) {
+             item[key] = val
+           }
+         }
+      }
+      return item
+    })
+    this.setData({
+      schoolInfoList:newList
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

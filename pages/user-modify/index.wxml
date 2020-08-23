@@ -24,15 +24,15 @@
       </view>
     </view>
     <view class="form_item form_first_item box_shadow b_r">
-      <blcoK>
+      <blcoK wx:for="{{schoolInfoList}}" wx:key="index">
         <view class="ipu_item box_shadow">
-          <input type="text" placeholder="学校"/>
+          <input type="text" value="{{item.schoolName}}" data-index="{{index}}" data-tip="schoolName" bindinput="ipuSchoolInfo" placeholder="学校"/>
         </view>
         <view class="ipu_item box_shadow">
-          <input type="text" placeholder="学历"/>
+          <input type="text" value="{{item.education}}" data-index="{{index}}" data-tip="education" bindinput="ipuSchoolInfo" placeholder="学历"/>
         </view>
         <view class="ipu_item box_shadow">
-          <input type="text" placeholder="在校时间"/>
+          <input type="text" value="{{item.schoolHours}}" data-index="{{index}}" data-tip="schoolHours" bindinput="ipuSchoolInfo" placeholder="在校时间"/>
         </view>
       </blcoK>
       <view class="add_school">

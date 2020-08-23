@@ -72,7 +72,6 @@ page {
 }
 .popup-slot .popup_box {
   width: 520rpx;
-  height: 540rpx;
   background-color: #e6e6e6;
   position: absolute;
   left: 0;
@@ -84,6 +83,9 @@ page {
 }
 .popup-slot .popup_box .search_box {
   margin-top: 0;
+}
+.popup-slot .popup_box .search_list {
+  padding-bottom: 140rpx;
 }
 .popup-slot .popup_box .search_list .list_item {
   padding: 26rpx;

@@ -44,7 +44,7 @@
 				{
 					"id": -1,
 					"name": "首页",
-					"pathName": "pages/user/index"
+					"pathName": "pages/user-modify/index"
 				}
 			]
 		}

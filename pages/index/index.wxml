@@ -1,20 +1,21 @@
 <!--index.wxml-->
+<nav-bar></nav-bar>
 <view class="container bg">
-  <view class="search_box">
+  <view class="search_box" style="top:{{statusBarHei}}px">
     <view class="search">
-      <view class="ipu_left"><input placeholder="搜索母校名称，例如：清华大学" type="text"/></view>
-      <view class="btn_search"><text class="iconfont icon-icon161603"></text></view>
+      <view class="ipu_left"><input placeholder="搜索母校名称，例如：清华大学" type="text" bindinput="ipuText"/></view>
+      <view class="btn_search" bind:tap="search"><text class="iconfont icon-icon161603"></text></view>
     </view>
-    <view class="search_result">
-      <view class="result_item" wx:for="{{5}}">北京大学</view>
+    <view class="search_result" wx:if="{{schoolNameList.length != 0}}">
+      <view class="result_item" wx:for="{{schoolNameList}}" wx:key="{{index}}">{{item}}</view>
     </view>
   </view>
-  <view class="gray_logo">
+  <view class="gray_logo" style="top:{{statusBarHei}}px">
     <view class="logo">
       <image src="/images/logo_gray.png" />
     </view>
   </view>
-  <view class="con_box">
+  <view class="con_box" style="margin-top:{{274 + statusBarHei}}px">
     <view class="btn_list f_30">热评榜单</view>
     <view class="ranking_box">
       <view class="ranking_top">
@@ -36,7 +37,7 @@
       </view>
     </view>
     <view class="list_box">
-      <view class="list_item" wx:for="{{10}}">
+      <view class="list_item" wx:for="{{10}}" wx:key="this">
         1、哥伦比亚大学
       </view>
     </view>

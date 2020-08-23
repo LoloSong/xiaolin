@@ -1,8 +1,7 @@
-
+<nav-bar></nav-bar>
 <view class="container">
-  <view class="status_bar" style="height:{{statusBarHei}}px"></view>
-  <view class="nar_bar" style="height:{{narBarHei}}px">
-    <view class="iconfont icon-quxiao f_30"></view>
+  <view class="nar_bar">
+    <view class="iconfont icon-quxiao"></view>
     <button class="btn_land btn_normal f_30" size="default">微信登陆</button>
   </view>
   <view class="logo">
