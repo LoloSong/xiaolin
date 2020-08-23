@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tabIndex: 0
   },
 
   /**
@@ -14,7 +14,13 @@ Page({
   onLoad: function (options) {
 
   },
-
+  /** 切换tab */
+  changeTab: function (e) {
+    console.log(e)
+    this.setData({
+      tabIndex: e.currentTarget.dataset.index
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

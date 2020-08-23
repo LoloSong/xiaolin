@@ -69,6 +69,8 @@ page {
 }
 .container .tab_content {
   margin-bottom: 60rpx;
+  display: flex;
+  align-items: center;
 }
 .container .score_wrapper {
   display: flex;

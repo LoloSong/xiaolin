@@ -14,12 +14,12 @@
     </view>
   </view>
   <view class="tab_box">
-    <view class="tab tab_first"><view class="tab_inner box_shadow active_tab">评分</view></view>
-    <view class="tab"><view class="tab_inner box_shadow">相册</view></view>
-    <view class="tab tab_first"><view class="tab_inner box_shadow">简介</view></view>
+    <view class="tab tab_first" data-index="{{0}}" bindtap="changeTab"><view class="tab_inner box_shadow {{tabIndex == 0 ? 'active_tab' : ''}}">评分</view></view>
+    <view class="tab" data-index="{{1}}" bindtap="changeTab"><view class="tab_inner box_shadow {{tabIndex == 1 ? 'active_tab' : ''}}">相册</view></view>
+    <view class="tab tab_first" data-index="{{2}}" bindtap="changeTab"><view class="tab_inner box_shadow {{tabIndex == 2 ? 'active_tab' : ''}}">简介</view></view>
   </view>
   <view class="tab_content">
-    <view class="tab_con_box score_wrapper none">
+    <view class="tab_con_box score_wrapper" wx:if="{{tabIndex == 0}}">
       <view class="tap f_30">综合分数  <text>4.7</text></view>
       <view class="con_tab_item box_shadow b_r">
         <view class="avatar box_shadow"><image src="" /></view>
@@ -39,7 +39,7 @@
         </view>
       </view>
     </view>
-    <view class="tab_con_box pic_box b_r none">
+    <view class="tab_con_box pic_box b_r" wx:if="{{tabIndex == 1}}">
       <view class="pic" wx:for="{{8}}"><image src="" /></view>
       <view class="pic">
         <view class="dot"></view>
@@ -47,7 +47,7 @@
         <view class="dot"></view>
       </view>
     </view>
-    <view class="tab_con_box message_box b_r box_shadow">
+    <view class="tab_con_box message_box b_r box_shadow" wx:if="{{tabIndex == 2}}">
       <textarea maxlength="120"></textarea>
       <view class="max_length">请输入80-120字</view>
     </view>
