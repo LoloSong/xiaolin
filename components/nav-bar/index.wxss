@@ -1,4 +1,8 @@
 /* components/nav-bar/index.wxss */
 .nar_bar{
-    width: 100%;
+  width: 750rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }

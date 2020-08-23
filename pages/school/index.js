@@ -9,7 +9,9 @@ Page({
     vertical: false,
     autoplay: false,
     interval: 2000,
-    duration: 500
+    duration: 500,
+    schoolName:'',
+    schoolNameList:[]
   },
 
   /**
@@ -18,7 +20,13 @@ Page({
   onLoad: function (options) {
 
   },
-
+  /** 输入文本 */
+  /** 文本框输入 */
+  ipuText: function (e) {
+    this.setData({
+      schoolName: e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

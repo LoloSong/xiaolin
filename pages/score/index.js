@@ -6,7 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    height: app.globalData.statusBar
+    height: app.globalData.statusBar,
+    subjectList:[
+      {
+        title:'学生会（Student Association',
+        answer:''
+      },
+      {
+        title:'颜值（Appearance）',
+        answer:''
+      }
+    ],
+    message:'',
+    isAnony: false
   },
 
   /**
@@ -15,7 +27,43 @@ Page({
   onLoad: function (options) {
 
   },
+  /** 答题 */
+  goAnswer: function (e) {
+    console.log(e)
+    let that = this,data = e.currentTarget.dataset;
+    let newList = that.data.subjectList.map((item, index) => {
+      if (index == data.index) {
+        item.answer = data.answer
+      }
+      return item
+    })
+    this.setData({
+      subjectList: newList
+    })
+  },
+  /** 输入留言 */
+  ipuMessage: function (e) {
+    this.setData({
+      message: e.detail.value
+    })
+  },
+  /** 是否匿名 */
+  goAnony: function (e) {
+    let that = this, isAnony = this.data.isAnony;
+    that.setData({
+      isAnony: !isAnony
+    })
+  },
+  /**返回 */
+  goback: function () {
+    wx.navigateBack({
+      delta:1 //返回上一级页面
+    })
+  },
+  /** 提交 */
+  comfirm: function () {
 
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

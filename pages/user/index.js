@@ -14,7 +14,12 @@ Page({
   onLoad: function (options) {
 
   },
-
+  /**  修改个人中心 */
+  goModifyInfo: function () {
+    wx.navigateTo({
+      url: '/pages/user-modify/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

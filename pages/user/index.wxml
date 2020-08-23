@@ -17,6 +17,6 @@
         </view>
     </view>
   </view>
-  <view class="tap f_30 box_shadow modify_btn">点击修改个人信息</view>
+  <view class="tap f_30 box_shadow modify_btn" bindtap="goModifyInfo">点击修改个人信息</view>
 </view>
 <tab-bar selected="{{2}}"></tab-bar>
