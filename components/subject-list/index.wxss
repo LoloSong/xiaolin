@@ -1,54 +1,23 @@
 /* components/subject/index.wxss */
-@import "/app.wxss";
-.user_con .user_tip_box {
-  display: flex;
-  align-items: flex-start;
-  overflow: hidden;
-  margin-bottom: 78rpx;
-}
-.user_con .user_tip_box .user_tip {
-  color: #808080;
-  font-size: 24rpx;
-  margin-right: 38rpx;
-}
-.user_con .user_tip_box .score {
-  font-size: 22rpx;
-  text-align: center;
-  line-height: 60rpx;
-  color: #808080;
-}
-.user_con .user_tip_box .message {
-  flex: 1;
-  font-size: 18rpx;
-  line-height: 24rpx;
-  margin-right: 50rpx;
-}
-.user_con .con {
-  width: 676rpx;
-  background-color: #fff;
-  box-sizing: border-box;
-  padding: 58rpx 68rpx;
-  margin-top: 54rpx;
-}
-.user_con .con .item {
+.item {
   margin-bottom: 34rpx;
 }
-.user_con .con .item .subject_title {
+.item .subject_title {
   font-size: 24rpx;
   color: #666;
   margin-bottom: 22rpx;
 }
-.user_con .con .item .subject_answer {
+.item .subject_answer {
   display: flex;
   justify-content: center;
 }
-.user_con .con .item .subject_answer .answer {
+.item .subject_answer .answer {
   margin-left: 30rpx;
 }
-.user_con .con .item .subject_answer .answer:first-child {
+.item .subject_answer .answer:first-child {
   margin-left: 0rpx;
 }
-.user_con .con .item .subject_answer .selected {
+.item .subject_answer .selected {
   width: 30rpx;
   height: 30rpx;
   background-color: #6fc2bd;
@@ -58,6 +27,6 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.user_con .con .item:last-child {
+.item:last-child {
   margin-bottom: 0rpx;
 }

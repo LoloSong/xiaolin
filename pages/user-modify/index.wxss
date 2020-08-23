@@ -9,7 +9,7 @@ page .container {
   flex-direction: column;
 }
 page .container form {
-  margin-top: 300rpx ;
+  margin-top: 200rpx ;
 }
 page .container .form_item {
   background-color: #fff;
