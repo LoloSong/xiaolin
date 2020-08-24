@@ -3,10 +3,13 @@ page {
   padding-bottom: 114rpx;
   background-color: #74c3c1;
 }
-.container {
+.wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.container .search_box {
+.wrapper .search_box {
   width: 100%;
   padding-top: 18rpx;
   padding-bottom: 34rpx;
@@ -20,30 +23,30 @@ page {
   color: #b2b2b2;
   font-size: 26rpx;
 }
-.container .search_box .search {
+.wrapper .search_box .search {
   display: flex;
   align-items: flex-end;
   margin-top: 82rpx;
 }
-.container .search_box .search .ipu_left {
+.wrapper .search_box .search .ipu_left {
   margin-left: 64rpx;
   margin-right: 10rpx;
   flex: 1;
 }
-.container .search_box .search .ipu_left input {
+.wrapper .search_box .search .ipu_left input {
   color: #b2b2b2;
   font-size: 26rpx;
 }
-.container .search_box .search .btn_search .iconfont {
+.wrapper .search_box .search .btn_search .iconfont {
   font-size: 48rpx;
   color: #464646;
   margin-right: 60rpx;
 }
-.container .search_box .search_result .result_item {
+.wrapper .search_box .search_result .result_item {
   margin-top: 28rpx;
   padding-left: 64rpx;
 }
-.container .gray_logo {
+.wrapper .gray_logo {
   width: 100%;
   height: 454rpx;
   background-color: #e6e6e6;
@@ -52,18 +55,18 @@ page {
   z-index: 10;
   border-radius: 0rpx 0rpx 48rpx 48rpx;
 }
-.container .gray_logo .logo {
+.wrapper .gray_logo .logo {
   width: 310rpx;
   height: 148rpx;
   margin: 226rpx auto;
 }
-.container .con_box {
+.wrapper .con_box {
   margin-top: 548rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.container .con_box .btn_list {
+.wrapper .con_box .btn_list {
   width: 278rpx;
   height: 80rpx;
   text-align: center;
@@ -72,68 +75,68 @@ page {
   background-color: #fff;
   border-radius: 20rpx;
 }
-.container .con_box .ranking_box {
+.wrapper .con_box .ranking_box {
   width: 444rpx;
   height: 410rpx;
   position: relative;
   margin-top: 72rpx;
 }
-.container .con_box .ranking_box .ranking_top {
+.wrapper .con_box .ranking_box .ranking_top {
   display: flex;
 }
-.container .con_box .ranking_box .ranking_top .rank_item {
+.wrapper .con_box .ranking_box .ranking_top .rank_item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.container .con_box .ranking_box .ranking_top .rank_item .avatar {
+.wrapper .con_box .ranking_box .ranking_top .rank_item .avatar {
   border-radius: 50%;
   overflow: hidden;
   margin-top: 8rpx;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 10rpx;
 }
-.container .con_box .ranking_box .ranking_top .rank_item .avatar image {
+.wrapper .con_box .ranking_box .ranking_top .rank_item .avatar image {
   border-radius: 50%;
   background-color: #f5f5f5;
 }
-.container .con_box .ranking_box .ranking_top .rank_item .icon {
+.wrapper .con_box .ranking_box .ranking_top .rank_item .icon {
   width: 76rpx;
   height: 96rpx;
 }
-.container .con_box .ranking_box .ranking_top .rank_two .avatar,
-.container .con_box .ranking_box .ranking_top .rank_three .avatar {
+.wrapper .con_box .ranking_box .ranking_top .rank_two .avatar,
+.wrapper .con_box .ranking_box .ranking_top .rank_three .avatar {
   width: 46rpx;
   height: 46rpx;
 }
-.container .con_box .ranking_box .ranking_top .rank_frist .avatar {
+.wrapper .con_box .ranking_box .ranking_top .rank_frist .avatar {
   width: 51rpx;
   height: 51rpx;
 }
-.container .con_box .ranking_box .ranking_top .rank_two {
+.wrapper .con_box .ranking_box .ranking_top .rank_two {
   width: 140rpx;
   top: 80rpx;
 }
-.container .con_box .ranking_box .ranking_top .rank_frist {
+.wrapper .con_box .ranking_box .ranking_top .rank_frist {
   flex: 1;
   top: 20rpx;
 }
-.container .con_box .ranking_box .ranking_top .rank_three {
+.wrapper .con_box .ranking_box .ranking_top .rank_three {
   width: 130rpx;
   top: 130rpx;
 }
-.container .con_box .ranking_box .ranking_img {
+.wrapper .con_box .ranking_box .ranking_img {
   width: 100%;
   height: 220rpx;
   position: absolute;
   bottom: 0;
 }
-.container .con_box .list_box {
+.wrapper .con_box .list_box {
   margin-top: 38rpx;
-  margin-bottom: 16rpx;
+  margin-bottom: 130rpx;
 }
-.container .con_box .list_box .list_item {
+.wrapper .con_box .list_box .list_item {
   background-color: #fff;
   width: 444rpx;
   height: 66rpx;

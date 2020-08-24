@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <nav-bar></nav-bar>
-<view class="container bg">
+<view class="wrapper bg">
   <view class="search_box" style="top:{{statusBarHei}}px">
     <view class="search">
       <view class="ipu_left"><input placeholder="搜索母校名称，例如：清华大学" type="text" bindinput="ipuText"/></view>

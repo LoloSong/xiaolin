@@ -59,7 +59,7 @@
 				{
 					"id": -1,
 					"name": "首页",
-					"pathName": "pages/school-home/index"
+					"pathName": "pages/index/index"
 				}
 			]
 		}
