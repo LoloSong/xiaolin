@@ -1,8 +1,8 @@
 {
   "pages":[
     "pages/login/index",
-    "pages/school/index",
     "pages/index/index",
+    "pages/school/index",
     "pages/school-home/index",
     "pages/user/index",
     "pages/user-modify/index",
@@ -30,7 +30,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/score/index",
+        "pagePath": "pages/school/index",
         "iconPath": "images/school_icon.png",
         "selectedIconPath": "images/school_active_icon.png",
         "text": "学校评分"

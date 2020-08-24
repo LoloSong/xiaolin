@@ -27,7 +27,7 @@ Page({
     this.getCommentsList()
   },
   getSchoolInfo() {
-    app.request('/wechat/school/info', { school_id: this.data.schoolId }).then((res) => {
+    app.request({ url: '/wechat/school/info', data: { school_id: this.data.schoolId } }).then((res) => {
       if (res.code !== 200) {
         wx.showToast({
           title: res.message,
@@ -46,7 +46,7 @@ Page({
     })
   },
   getCommentsList() {
-    app.request('/wechat/school/comments', { school_id: this.data.schoolId }).then((res) => {
+    app.request({ url: '/wechat/school/comments', data: { school_id: this.data.schoolId } }).then((res) => {
       if (res.code !== 200) {
         wx.showToast({
           title: res.message,

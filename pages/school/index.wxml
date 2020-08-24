@@ -1,35 +1,34 @@
 <!--pages/school/index.wxml-->
 <view class="wrapper">
-  <view class="search_box">
-    <view class="ipu_box"><input type="text" value="{{schoolName}}" bindinput="ipuText"  placeholder="请输入您需要评分的学校"/></view>
-    <view class="iconfont icon-icon161603"></view>
-  </view>
-  <view class="swiper_box">
-    <swiper indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{swiper}}" wx:key="*this">
-          <swiper-item class="item">
-            <view class="swiper-item {{item}}">
-              <image src="{{item.url}}" />
-            </view>
-          </swiper-item>
-        </block>
-      </swiper>
-  </view>
-  <view class="btn_box">
-    <view class="goBack btn">返回</view>
-    <view class="comfirm btn">提交</view>
-  </view>
+	<view class="search_box">
+		<view class="ipu_box"><input type="text" value="{{searchName}}" placeholder="请输入您需要评分的学校" bindinput="ipuText" bindfocus="inputFocus" bindblur="inputBulr"/></view>
+		<view class="iconfont icon-icon161603"></view>
+	</view>
+	<view class="swiper_box">
+		<swiper indicator-dots="{{true}}" indicator-active-color="#ffffff">
+			<block wx:for="{{swiper}}" wx:key="*this">
+				<swiper-item class="item">
+					<view class="swiper-item {{item}}">
+						<image src="{{item.url}}" />
+					</view>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<view class="btn_box">
+		<view class="goBack btn">返回</view>
+		<view class="comfirm btn">提交</view>
+	</view>
 </view>
-<view class="popup-slot" wx:if="{{schoolName != ''}}">
-  <view class="popup_box" >
-    <view class="search_box">
-      <view class="ipu_box"><input value="{{schoolName}}" type="text" bindinput="ipuText" placeholder="请输入您需要评分的学校"/></view>
-      <view class="iconfont icon-icon161603"></view>
-    </view>
-    <view class="search_list" wx:if="{{schoolNameList.length != 0}}">
-      <view class="list_item" wx:if="{{schoolNameList}}" wx:key="index">北京</view>
-    </view>
-  </view>
+<view class="popup-slot" wx:if="{{isShowMask}}">
+	<view class="popup_box">
+		<view class="search_box">
+			<!-- <view class="ipu_box"><input value="{{searchName}}" type="text" placeholder="请输入您需要评分的学校" bindinput="ipuText" bindfocus="inputFocus" bindblur="inputBulr"/></view>
+			<view class="iconfont icon-icon161603"></view> -->
+		</view>
+		<view class="search_list" wx:if="{{searchNameList.length !== 0}}">
+			<view class="list_item" wx:for="{{searchNameList}}" wx:key="index" bindtap="selectSchool" data-school_id="{{item.id}}" data-school_name="{{item.name}}">{{ item.name }}</view>
+		</view>
+	</view>
 </view>
-<tar-bar/>
+<tar-bar />

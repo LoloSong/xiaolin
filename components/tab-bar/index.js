@@ -14,7 +14,7 @@ Component({
       selectedIconPath: "https://api.collegein.com/images/home_active_icon.png",
       text: "首页"
     }, {
-      pagePath: "/pages/score/index",
+      pagePath: "/pages/school/index",
       iconPath: "https://api.collegein.com/images/school_icon.png",
       selectedIconPath: "https://api.collegein.com/images/school_active_icon.png",
       text: "学校评分"

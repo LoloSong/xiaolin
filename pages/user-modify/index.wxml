@@ -19,7 +19,7 @@
       </view>
       <view class="ipu_item box_shadow">
         <picker range="{{sexOptions}}" range-key="name" value="{{id}}" bindchange="changeSex">
-          <input type="text" value="{{sex}}" placeholder="性别" disabled/>
+          <input type="text" value="{{sexText}}" placeholder="性别" disabled/>
         </picker>
       </view>
       <view class="ipu_item box_shadow">
@@ -45,13 +45,13 @@
         <view class="ipu_list">
           <view class="ipu_item box_shadow">
             <picker mode="date" data-index="{{idx}}" data-name="start_at" bindchange="changeSchoolHours">
-              <input type="text" value="{{item.schoolHours.start_at}}" data-index="{{idx}}" data-tip="schoolHours" placeholder="开始在校时间"/>
+              <input type="text" value="{{item.start_at}}" data-index="{{idx}}" data-tip="schoolHours" placeholder="开始在校时间" disabled/>
             </picker>
           </view>
           <view class="text">至</view>
           <view class="ipu_item box_shadow">
             <picker mode="date" data-index="{{idx}}" data-name="end_at" bindchange="changeSchoolHours">
-              <input type="text" value="{{item.schoolHours.end_at}}" data-index="{{idx}}" data-tip="schoolHours" placeholder="结束在校时间"/>
+              <input type="text" value="{{item.end_at}}" data-index="{{idx}}" data-tip="schoolHours" placeholder="结束在校时间" disabled/>
             </picker>
           </view>
         </view>

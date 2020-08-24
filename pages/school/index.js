@@ -1,86 +1,58 @@
 // pages/school/index.js
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    indicatorDots: true,
-    vertical: false,
-    autoplay: false,
-    interval: 2000,
-    duration: 500,
-    schoolName:'',
-    schoolNameList:[],
-    swiper:[
-      {
-        url: '/images/school_swiper1.png'
-      },
-      {
-        url: "/images/school_swiper2.png"
-      }
+    isShowMask: false,
+    searchId: '',
+    searchName: '',
+    searchNameList: [],
+    swiper: [
+      { url: '/images/school_swiper1.png' },
+      { url: '/images/school_swiper2.png'}
     ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-  /** 输入文本 */
-  /** 文本框输入 */
-  ipuText: function (e) {
+  ipuText(e) {
     this.setData({
-      schoolName: e.detail.value
+      searchName: e.detail.value
+    })
+    if (!this.data.searchName) {
+      this.setData({ searchNameList: [] })
+      return
+    }
+    this.searchSchool()
+    // 防抖优化
+    // util.debounce(this.searchSchool)
+  },
+  inputFocus() {
+    this.setData({
+      isShowMask: true
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  inputBulr() {
+    // this.setData({
+    //   isShowMask: false
+    // })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  searchSchool() {
+    app.request({ url: '/wechat/school/search', data: { key: this.data.searchName } }).then((res) => {
+      if (res.code !== 200) {
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }
+      this.setData({
+        searchNameList: res.data
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  selectSchool(e) {
+    this.setData({
+      searchId: e.target.dataset.school_id,
+      searchName: e.target.dataset.school_name,
+      searchNameList: []
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

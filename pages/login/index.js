@@ -9,8 +9,8 @@ Page({
   },
   bindGetUserInfo(e) {
     if (e.detail.userInfo) {
-      this.avatarUrl = e.detail.userInfo.avatarUrl
-      this.nickname = e.detail.userInfo.nickName
+      this.data.avatarUrl = e.detail.userInfo.avatarUrl
+      this.data.nickname = e.detail.userInfo.nickName
       this.login()
     } else {
       wx.showToast({
@@ -21,7 +21,7 @@ Page({
     }
   },
   login() {
-    let that = this;
+    let _this = this
     wx.showLoading({
       title: `登录中`,
       mask: true
@@ -31,11 +31,11 @@ Page({
         if (res.code) {
           wx.request({
             url: `${app.globalData.baseUrl}/wechat/member/login`,
-            method: 'post',
+            method: 'POST',
             data: {
               js_code: res.code,
-              avatar: that.avatarUrl,
-              nickname:that.nickname
+              avatar: _this.data.avatarUrl,
+              nickname: _this.data.nickname
             },
             success(res) {
               wx.hideLoading()

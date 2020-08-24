@@ -6,7 +6,6 @@ const util = require('../../utils/util')
 Page({
   data: {
     list: [],
-    // userInfo: {},
     statusBarHei: app.globalData.statusBar,
     searchId: '',
     searchName: '',
@@ -15,38 +14,12 @@ Page({
   onLoad() {
     this.getList()
     this.getIsInfo()
-    // if (app.globalData.userInfo) {
-    //   this.setData({
-    //     userInfo: app.globalData.userInfo,
-    //     hasUserInfo: true
-    //   })
-    // } else if (this.data.canIUse) {
-    //   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-    //   // 所以此处加入 callback 以防止这种情况
-    //   app.userInfoReadyCallback = res => {
-    //     this.setData({
-    //       userInfo: res.userInfo,
-    //       hasUserInfo: true
-    //     })
-    //   }
-    // } else {
-    //   // 在没有 open-type=getUserInfo 版本的兼容处理
-    //   wx.getUserInfo({
-    //     success: res => {
-    //       app.globalData.userInfo = res.userInfo
-    //       this.setData({
-    //         userInfo: res.userInfo,
-    //         hasUserInfo: true
-    //       })
-    //     }
-    //   })
-    // }
   },
   onShow() {
     this.clearSearch()
   },
   getList() {
-    app.request('/wechat/school/index').then((res) => {
+    app.request({ url: '/wechat/school/index' }).then((res) => {
       if (res.code !== 200) {
         wx.showToast({
           title: res.message,
@@ -61,9 +34,19 @@ Page({
     })
   },
   getIsInfo() {
-    app.request('/wechat/member/info/status').then((res) => {
+    app.request({ url: '/wechat/member/info/status' }).then((res) => {
+      if (res.code !== 200) {
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }
       if (res.code === 40002) {
         wx.setStorageSync('isInfo', false)
+      } else {
+        wx.setStorageSync('isInfo', true)
       }
     })
   },
@@ -80,7 +63,7 @@ Page({
     // util.debounce(this.searchSchool)
   },
   searchSchool() {
-    app.request('/wechat/school/search', { key: this.data.searchName }).then((res) => {
+    app.request({ url: '/wechat/school/search', data: { key: this.data.searchName } }).then((res) => {
       if (res.code !== 200) {
         wx.showToast({
           title: res.message,
@@ -105,7 +88,7 @@ Page({
       searchNameList: []
     })
   },
-  search () {
+  search() {
     if (this.data.searchId) {
       // 选过学校列表
       wx.navigateTo({ url: `/pages/school-home/index?id=${this.data.searchId}` })
@@ -126,14 +109,6 @@ Page({
       searchId: '',
       searchName: '',
       searchNameList: []
-    })
-  },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
     })
   }
 })

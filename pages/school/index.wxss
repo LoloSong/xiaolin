@@ -70,7 +70,7 @@ page {
 }
 .popup-slot .popup_box {
   width: 520rpx;
-  background-color: #e6e6e6;
+  background-color: #fcfcfc;
   position: absolute;
   left: 0;
   right: 0;
@@ -86,15 +86,16 @@ page {
   padding-bottom: 140rpx;
 }
 .popup-slot .popup_box .search_list .list_item {
-  padding: 26rpx;
+  padding: 16rpx 26rpx;
   font-size: 24rpx;
-  color: #808080;
+  color: #cacece;
 }
 .wx-swiper-dot {
-  width: 20rpx!important;
+  width: 20rpx !important;
   display: inline-flex;
-  height: 20rpx!important;
-  border-radius: 4rpx!important;
-  margin-left: 24rpx!important;
+  height: 20rpx !important;
+  border-radius: 4rpx !important;
+  margin-left: 24rpx !important;
   justify-content: space-between;
+  background: #fff;
 }

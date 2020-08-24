@@ -27,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -79,9 +79,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "个人编辑页",
-					"pathName": "pages/school/index",
+					"pathName": "pages/user-modify/index",
 					"query": "",
 					"scene": null
 				},
@@ -90,6 +90,13 @@
 					"name": "学校首页",
 					"pathName": "pages/school-home/index",
 					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学校评分",
+					"pathName": "pages/school/index",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -40,6 +40,7 @@ page .wrapper .form_item .edit_box .edit_img .avatar {
   border-radius: 50%;
   overflow: hidden;
   background: #e6e6e6;
+  object-fit: cover;
 }
 page .wrapper .form_item .edit_box .edit {
   position: absolute;
