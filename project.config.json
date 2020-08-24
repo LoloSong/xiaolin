@@ -81,7 +81,7 @@
 				{
 					"id": -1,
 					"name": "个人编辑页",
-					"pathName": "pages/user-modify/index",
+					"pathName": "pages/school/index",
 					"query": "",
 					"scene": null
 				},

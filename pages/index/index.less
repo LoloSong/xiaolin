@@ -1,6 +1,6 @@
 /**index.wxss**/
 page{
-  padding-bottom: 114rpx;
+  padding-bottom: calc(114rpx + env(safe-area-inset-bottom));
   background-color: #74c3c1;
 }
 .wrapper{
@@ -144,7 +144,7 @@ page{
     }
     .list_box{
       margin-top: 38rpx;
-      margin-bottom: 130rpx;
+      margin-bottom: calc(130rpx + env(safe-area-inset-bottom));
       .list_item{
         background-color: #fff;
         width: 444rpx;

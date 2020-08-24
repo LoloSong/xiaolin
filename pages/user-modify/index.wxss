@@ -1,28 +1,27 @@
 /* pages/user-modify/index.wxss */
 page {
   background-color: #74c3c1;
-  padding-bottom: 114rpx;
 }
-page .container {
+page .wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-page .container form {
-  margin-top: 200rpx ;
+page .wrapper form {
+  margin-top: 200rpx;
 }
-page .container .form_item {
+page .wrapper .form_item {
   background-color: #fff;
   width: 686rpx;
   padding: 50rpx;
   box-sizing: border-box;
   position: relative;
 }
-page .container .form_item .seat {
+page .wrapper .form_item .seat {
   width: 100%;
   height: 100rpx;
 }
-page .container .form_item .edit_box {
+page .wrapper .form_item .edit_box {
   width: 180rpx;
   height: 180rpx;
   position: absolute;
@@ -31,18 +30,18 @@ page .container .form_item .edit_box {
   right: 0;
   margin: auto;
 }
-page .container .form_item .edit_box .edit_img {
+page .wrapper .form_item .edit_box .edit_img {
   width: 100%;
   height: 100%;
 }
-page .container .form_item .edit_box .edit_img .avatar {
+page .wrapper .form_item .edit_box .edit_img .avatar {
   width: 180rpx;
   height: 180rpx;
   border-radius: 50%;
   overflow: hidden;
   background: #e6e6e6;
 }
-page .container .form_item .edit_box .edit {
+page .wrapper .form_item .edit_box .edit {
   position: absolute;
   z-index: 10;
   color: #6c6c6c;
@@ -52,7 +51,52 @@ page .container .form_item .edit_box .edit {
   left: 0;
   right: 0;
 }
-page .container .form_item .ipu_item {
+page .wrapper .form_item .ipu_wrapper {
+  position: relative;
+  margin-bottom: 38rpx;
+}
+page .wrapper .form_item .ipu_wrapper .ipu_item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+page .wrapper .form_item .ipu_wrapper .search_box {
+  background-color: #fff;
+  font-size: 22rpx;
+  color: #acacac;
+  padding: 90rpx 30rpx 30rpx;
+}
+page .wrapper .form_item .ipu_wrapper .search_box .result_item {
+  margin-bottom: 26rpx;
+}
+page .wrapper .form_item .ipu_wrapper .search_box .result_item:last-child {
+  margin-bottom: 0rpx;
+}
+page .wrapper .form_item .school_item {
+  margin-bottom: 38rpx;
+}
+page .wrapper .form_item .school_item:last-child {
+  margin-bottom: 0rpx;
+}
+page .wrapper .form_item .ipu_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+page .wrapper .form_item .ipu_list .text {
+  font-size: 22rpx;
+  color: #acacac;
+  margin-right: 10rpx;
+  margin-left: 10rpx;
+}
+page .wrapper .form_item .ipu_list .ipu_item {
+  flex: 1;
+  margin-bottom: 0rpx;
+}
+page .wrapper .form_item .ipu_item {
   display: flex;
   align-items: center;
   background-color: #fff;
@@ -64,21 +108,22 @@ page .container .form_item .ipu_item {
   margin-bottom: 38rpx;
   border-radius: 12rpx;
 }
-page .container .form_item .ipu_item input {
+page .wrapper .form_item .ipu_item input {
   flex: 1;
   color: #666666;
 }
-page .container .form_item .ipu_item picker {
+page .wrapper .form_item .ipu_item picker {
   flex: 1;
 }
-page .container .form_item .ipu_item:last-child {
+page .wrapper .form_item .ipu_item:last-child {
   margin-bottom: 0rpx;
+  position: relative;
 }
-page .container .form_item:last-child {
-  margin-top: 50rpx;
+page .wrapper .form_item:last-child {
   margin-bottom: 130rpx;
+  margin-top: 50rpx;
 }
-page .container .add_school {
+page .wrapper .add_school {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -86,7 +131,7 @@ page .container .add_school {
   color: #acacac;
   font-size: 26rpx;
 }
-page .container .add_school .iconfont {
+page .wrapper .add_school .iconfont {
   width: 24rpx;
   height: 24rpx;
   border-radius: 50%;
@@ -96,14 +141,14 @@ page .container .add_school .iconfont {
   font-size: 20rpx;
   margin-right: 14rpx;
 }
-page .container .btn_box {
+page .wrapper .btn_box {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 34rpx;
   color: #5d7b79;
 }
-page .container .btn_box .btn {
+page .wrapper .btn_box .btn {
   width: 178rpx;
   height: 56rpx;
   text-align: center;
@@ -111,9 +156,9 @@ page .container .btn_box .btn {
   font-size: 26rpx;
   border-radius: 12rpx;
 }
-page .container .btn_box .goBack {
+page .wrapper .btn_box .goBack {
   border: 1rpx solid rgba(0, 0, 0, 0.1);
 }
-page .container .btn_box .comfirm {
+page .wrapper .btn_box .comfirm {
   background-image: linear-gradient(to bottom, #bddfdc, #77c1bd);
 }

@@ -1,5 +1,5 @@
 <!--pages/school/index.wxml-->
-<view class="container">
+<view class="wrapper">
   <view class="search_box">
     <view class="ipu_box"><input type="text" value="{{schoolName}}" bindinput="ipuText"  placeholder="请输入您需要评分的学校"/></view>
     <view class="iconfont icon-icon161603"></view>
@@ -7,10 +7,10 @@
   <view class="swiper_box">
     <swiper indicator-dots="{{indicatorDots}}"
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:key="*this">
+        <block wx:for="{{swiper}}" wx:key="*this">
           <swiper-item class="item">
             <view class="swiper-item {{item}}">
-              <image src="" />
+              <image src="{{item.url}}" />
             </view>
           </swiper-item>
         </block>

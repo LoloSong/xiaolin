@@ -1,6 +1,6 @@
 <!--pages/score/index.wxml-->
 <view class="status_bar" style="height:{{height}}px"></view>
-<view class="container">
+<view class="wrapper">
   <view class="tap f_30 box_shadow">校园生活评分</view>
   <view class="score_list_box b_r">
     <block wx:for="{{subjectList}}" wx:key="index">

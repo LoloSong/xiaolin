@@ -1,7 +1,6 @@
 /* pages/school/index.wxss */
 page {
   background-color: #74c3c1;
-  padding-bottom: 114rpx;
 }
 .search_box {
   width: 520rpx;
@@ -21,43 +20,42 @@ page {
 .search_box .ipu_box {
   flex: 1;
 }
-.container {
+.wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.container .swiper_box {
+.wrapper .swiper_box {
   width: 520rpx;
   margin-top: 70rpx;
   height: 860rpx;
 }
-.container .swiper_box swiper {
+.wrapper .swiper_box swiper {
   height: 100%;
 }
-.container .swiper_box .swiper-item {
+.wrapper .swiper_box .swiper-item {
   width: 100%;
   height: 790rpx;
-  background-color: #f5f5f5;
 }
-.container .btn_box {
+.wrapper .btn_box {
   width: 520rpx;
   margin-top: 96rpx;
   display: flex;
   justify-content: space-between;
   font-size: 26rpx;
 }
-.container .btn_box .btn {
+.wrapper .btn_box .btn {
   width: 178rpx;
   height: 60rpx;
   line-height: 60rpx;
   text-align: center;
   border-radius: 12rpx;
 }
-.container .btn_box .goBack {
+.wrapper .btn_box .goBack {
   background-image: linear-gradient(to bottom, #fff, #74c3c1);
 }
-.container .btn_box .comfirm {
+.wrapper .btn_box .comfirm {
   background-color: #fff;
   box-shadow: 0 0 10rpx 5rpx rgba(0, 0, 0, 0.05);
   color: #808080;

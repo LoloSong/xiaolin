@@ -11,7 +11,15 @@ Page({
     interval: 2000,
     duration: 500,
     schoolName:'',
-    schoolNameList:[]
+    schoolNameList:[],
+    swiper:[
+      {
+        url: '/images/school_swiper1.png'
+      },
+      {
+        url: "/images/school_swiper2.png"
+      }
+    ]
   },
 
   /**

@@ -19,7 +19,7 @@ App({
       self.globalData.customBar = (custom.top - systemInfo.statusBarHeight) * 2 + custom.height;//标题栏的高度
     }
   },
-  request(url, data) {
+  request(url, data, method) {
     const _this = this
     const token = wx.getStorageSync('token')
     if (!token) {
@@ -32,6 +32,7 @@ App({
       wx.request({
         url: `${_this.globalData.baseUrl}${url}`,
         data,
+        method: method || "GET",
         header: {
           'Authorization': token
         },

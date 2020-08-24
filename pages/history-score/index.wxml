@@ -1,5 +1,5 @@
 <!--pages/history-score/index.wxml-->
-<view class="container">
+<view class="wrapper">
   <view class="user_top"><image src="/images/top.png" /></view>
   <view class="user_info">
     <view class="user_name">XXX</view>
