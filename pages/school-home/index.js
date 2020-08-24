@@ -1,28 +1,61 @@
 // pages/school-home/index.js
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     tabIndex: 0,
-    subjectList:[
+    schoolId: '',
+    name: '', // 学校姓名
+    logo: '', // 学校logo
+    score: 0, // 综合评分
+    desc: '', // 学校简介
+    imgList: [],  // 相册列表
+    commentsList: [], // 评论列表
+    subjectList: [
       {
-        title:'学生会（Student Association',
-        answer:''
+        title: '学生会（Student Association',
+        answer: ''
       },
       {
-        title:'颜值（Appearance）',
-        answer:''
+        title: '颜值（Appearance）',
+        answer: ''
       }
     ],
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad(options) {
+    this.data.schoolId = options.id || ''
+    this.getSchoolInfo()
+    this.getCommentsList()
+  },
+  getSchoolInfo() {
+    app.request('/wechat/school/info', { school_id: this.data.schoolId }).then((res) => {
+      if (res.code !== 200) {
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }
+      this.setData({
+        name: res.data.name,
+        logo: res.data.logo,
+        score: res.data.score,
+        desc: res.data.desc,
+        imgList: res.data.photos
+      })
+    })
+  },
+  getCommentsList() {
+    app.request('/wechat/school/comments', { school_id: this.data.schoolId }).then((res) => {
+      if (res.code !== 200) {
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }
+    })
   },
   /** 切换tab */
   changeTab: function (e) {
@@ -34,7 +67,7 @@ Page({
   /** 答题 */
   goAnswer: function (e) {
     console.log(e)
-    let that = this,data = e.detail.data;
+    let that = this, data = e.detail.data;
     let newList = that.data.subjectList.map((item, index) => {
       if (index == data.index) {
         item.answer = data.answer
@@ -44,53 +77,5 @@ Page({
     this.setData({
       subjectList: newList
     })
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

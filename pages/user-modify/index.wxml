@@ -2,25 +2,30 @@
 <view class="container">
   <form >
     <view class="form_item form_first_item box_shadow b_r">
-      <view class="edit_box">
+      <view class="edit_box" bindtap="uploadAvatar">
         <view class="edit_img">
-          <image src="/images/head.png" />
+          <image class="avatar" wx:if="{{avatar}}" src="{{avatar}}"></image>
+          <image class="avatar" wx:else src="https://api.collegein.com/images/head.png" />
         </view>
         <view class="edit">点击编辑</view>
       </view>
       <view class="seat"></view>
       <view class="ipu_item box_shadow">
-        <input type="text" placeholder="姓名"/>
+        <input type="text" value="{{firstName}}" placeholder="姓氏" bindinput="getFirstName"/>
         <view class="ipu_right">请填写真实姓名</view>
       </view>
       <view class="ipu_item box_shadow">
-        <input type="text" placeholder="名字"/>
+        <input type="text" value="{{lastName}}" placeholder="名字" bindinput="getLastName"/>
       </view>
       <view class="ipu_item box_shadow">
-        <input type="text" placeholder="性别"/>
+        <picker range="{{sexOptions}}" range-key="name" value="{{id}}" bindchange="changeSex">
+          <input type="text" value="{{sex}}" placeholder="性别" disabled/>
+        </picker>
       </view>
       <view class="ipu_item box_shadow">
-        <input type="text" placeholder="生日"/>
+        <picker mode="date" bindchange="changeBirthday">
+          <input type="text" value="{{birthday}}" placeholder="生日" disabled/>
+        </picker>
       </view>
     </view>
     <view class="form_item form_first_item box_shadow b_r">

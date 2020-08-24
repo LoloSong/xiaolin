@@ -37,7 +37,14 @@ page {
   color: #b2b2b2;
   font-size: 26rpx;
 }
+<<<<<<< HEAD
 .wrapper .search_box .search .btn_search .iconfont {
+=======
+.container .search_box .search .ipu_left .placeholder {
+  color: #d5d5d5;
+}
+.container .search_box .search .btn_search .iconfont {
+>>>>>>> b09ed265f3ae58c8f1369fb25a6f03510e342686
   font-size: 48rpx;
   color: #464646;
   margin-right: 60rpx;

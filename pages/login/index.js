@@ -1,68 +1,67 @@
 // pages/login/index.js
 let app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    statusBarHei:app.globalData.statusBar,
-    narBarHei:app.globalData.customBar
+    statusBarHei: app.globalData.statusBar,
+    narBarHei: app.globalData.customBar,
+    avatarUrl: '', // 微信头像
+    nickname: ''  // 微信昵称
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  bindGetUserInfo(e) {
+    if (e.detail.userInfo) {
+      this.avatarUrl = e.detail.userInfo.avatarUrl
+      this.nickname = e.detail.userInfo.nickname
+      this.login()
+    } else {
+      wx.showToast({
+        title: '请先完成微信授权',
+        icon: 'none',
+        duration: 2000
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  login() {
+    wx.showLoading({
+      title: `登录中`,
+      mask: true
+    })
+    wx.login({
+      success(res) {
+        if (res.code) {
+          wx.request({
+            url: `${app.globalData.baseUrl}/wechat/member/login`,
+            method: 'post',
+            data: {
+              js_code: res.code
+            },
+            success(res) {
+              wx.hideLoading()
+              if (res.data.code !== 200) {
+                wx.showToast({
+                  title: res.data.message,
+                  icon: 'none',
+                  duration: 2000
+                })
+                return
+              }
+              wx.setStorageSync('token', res.data.data.token)
+              wx.setStorageSync('oepnid', res.data.data.openid)
+              wx.reLaunch({
+                url: '/pages/index/index',
+              })
+            }
+          })
+        } else {
+          wx.showToast({
+            title: `登录失败${res.errMsg}`,
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      },
+      fail() {
+        app.requestFail()
+      }
+    })
   }
 })

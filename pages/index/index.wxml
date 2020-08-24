@@ -1,46 +1,58 @@
 <!--index.wxml-->
 <nav-bar></nav-bar>
-<view class="wrapper bg">
-  <view class="search_box" style="top:{{statusBarHei}}px">
-    <view class="search">
-      <view class="ipu_left"><input placeholder="搜索母校名称，例如：清华大学" type="text" bindinput="ipuText"/></view>
-      <view class="btn_search" bind:tap="search"><text class="iconfont icon-icon161603"></text></view>
-    </view>
-    <view class="search_result" wx:if="{{schoolNameList.length != 0}}">
-      <view class="result_item" wx:for="{{schoolNameList}}" wx:key="{{index}}">{{item}}</view>
-    </view>
-  </view>
-  <view class="gray_logo" style="top:{{statusBarHei}}px">
-    <view class="logo">
-      <image src="/images/logo_gray.png" />
-    </view>
-  </view>
-  <view class="con_box" style="margin-top:{{274 + statusBarHei}}px">
-    <view class="btn_list f_30">热评榜单</view>
-    <view class="ranking_box">
-      <view class="ranking_top">
-        <view class="rank_item rank_two">
-          <view class="avatar"><image src="" /></view>
-          <view class="icon"><image src="/images/circle.png" /></view>
-        </view>
-        <view class="rank_item rank_frist">
-          <view class="avatar"><image src="" /></view>
-          <view class="icon"><image src="/images/circle.png" /></view>
-        </view>
-        <view class="rank_item rank_three">
-          <view class="avatar"><image src="" /></view>
-          <view class="icon"><image src="/images/circle.png" /></view>
-        </view>
-      </view>
-      <view class="ranking_img">
-        <image src="/images/bg_ranking.png" />
-      </view>
-    </view>
-    <view class="list_box">
-      <view class="list_item" wx:for="{{10}}" wx:key="this">
-        1、哥伦比亚大学
-      </view>
-    </view>
-  </view>
+<view class="container bg">
+	<view class="search_box" style="top:{{statusBarHei}}px">
+		<view class="search">
+			<view class="ipu_left"><input type="text"  value="{{searchName}}" placeholder="搜索母校名称，例如：清华大学" placeholder-class="placeholder" confirm-type="search" bindinput="ipuText" bindconfirm="search" /></view>
+			<view class="btn_search" bindtap="search"><text class="iconfont icon-icon161603"></text></view>
+		</view>
+		<view class="search_result" wx:if="{{searchNameList.length !== 0}}">
+			<view class="result_item" wx:for="{{searchNameList}}" wx:key="index" bindtap="selectSchool" data-school_id="{{item.id}}" data-school_name="{{item.name}}">{{ item.name }}</view>
+		</view>
+	</view>
+	<view class="gray_logo" style="top:{{statusBarHei}}px">
+		<view class="logo">
+			<image src="https://api.collegein.com/images/logo_gray.png" />
+		</view>
+	</view>
+	<view class="con_box" style="margin-top:{{274 + statusBarHei}}px">
+		<view class="btn_list f_30">热评榜单</view>
+		<view class="ranking_box">
+			<view class="ranking_top">
+				<view class="rank_item rank_two">
+					<view class="avatar">
+						<image src="" />
+					</view>
+					<view class="icon">
+						<image src="https://api.collegein.com/images/circle.png" />
+					</view>
+				</view>
+				<view class="rank_item rank_frist">
+					<view class="avatar">
+						<image src="" />
+					</view>
+					<view class="icon">
+						<image src="https://api.collegein.com/images/circle.png" />
+					</view>
+				</view>
+				<view class="rank_item rank_three">
+					<view class="avatar">
+						<image src="" />
+					</view>
+					<view class="icon">
+						<image src="https://api.collegein.com/images/circle.png" />
+					</view>
+				</view>
+			</view>
+			<view class="ranking_img">
+				<image src="https://api.collegein.com/images/bg_ranking.png" />
+			</view>
+		</view>
+		<view class="list_box">
+			<view class="list_item" wx:for="{{list}}" wx:key="index" bindtap="goSchoolHome" data-school_id="{{item.id}}">
+				{{ index + 1 }}、{{ item.name }}
+			</view>
+		</view>
+	</view>
 </view>
-<tab-bar selectd="{{0}}"/>
+<tab-bar selectd="{{0}}" />
