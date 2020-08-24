@@ -1,6 +1,6 @@
 <!--components/subject/index.wxml-->
 <view class="item">
-  <view class="subject_title">{{index + 1}}、{{item.title}}</view>
+  <view class="subject_title">{{index + 1}}、{{item.name}}</view>
   <view class="subject_answer">
     <circular-progress-view class="answer" bindtap="goAnswer" data-answer="a" data-index="{{index}}" percent="{{20}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
       <view class="{{item.answer == 'a' ? 'selected':''}}"></view>

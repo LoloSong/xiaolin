@@ -83,7 +83,7 @@ page {
   margin-top: 0;
 }
 .popup-slot .popup_box .search_list {
-  padding-bottom: 140rpx;
+  padding-bottom: 80rpx;
 }
 .popup-slot .popup_box .search_list .list_item {
   padding: 16rpx 26rpx;

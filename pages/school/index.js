@@ -6,10 +6,11 @@ Page({
     searchId: '',
     searchName: '',
     searchNameList: [],
+    tag: 1,  // 1综合 2生活
     swiper: [
       { url: '/images/school_swiper1.png' },
-      { url: '/images/school_swiper2.png'}
-    ]
+      { url: '/images/school_swiper2.png' }
+    ],
   },
   ipuText(e) {
     this.setData({
@@ -29,9 +30,12 @@ Page({
     })
   },
   inputBulr() {
-    // this.setData({
-    //   isShowMask: false
-    // })
+    this.hideMask()
+  },
+  hideMask() {
+    this.setData({
+      isShowMask: false
+    })
   },
   searchSchool() {
     app.request({ url: '/wechat/school/search', data: { key: this.data.searchName } }).then((res) => {
@@ -55,4 +59,26 @@ Page({
       searchNameList: []
     })
   },
+  changeSwiper(e) {
+    let { current } = e.detail
+    if (current === 0) {
+      this.data.tag = 1
+    }
+    if (current === 1) {
+      this.data.tag = 2
+    }
+    console.log(this.data.tag)
+  },
+  goScore() {
+    if (!this.data.searchId) {
+      // 没有找到对应但id
+      wx.showToast({
+        title: '未匹配到该学校',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
+    wx.navigateTo({url: `/pages/score/index?schoolId=${this.data.searchId}&tag=${this.data.tag}` })
+  }
 })

@@ -93,10 +93,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "学校评分",
+					"id": 4,
+					"name": "选择学校评分",
 					"pathName": "pages/school/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学校评分",
+					"pathName": "pages/score/index",
+					"query": "schoolId=1&tag=1",
 					"scene": null
 				}
 			]
