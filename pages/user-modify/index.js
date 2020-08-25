@@ -179,7 +179,6 @@ Page({
   },
   selectSchool(e) {
     let data = e.target.dataset
-    console.log(data.index)
     let newList = this.data.schoolInfoList.map((item, index) => {
       if (index == data.index) {
         item = {
@@ -244,6 +243,13 @@ Page({
     });
   },
   comfirm() {
+    for (let i = 0; i < this.data.schoolInfoList.length; i++) {
+      if (!this.data.schoolInfoList[i].searchName) return app.Tips({title: '请输入您的母校名称'})
+      if (!this.data.schoolInfoList[i].school_id) return app.Tips({title:'请选择跟您输入母校对应的学校名称'})
+      if (!this.data.schoolInfoList[i].education) return app.Tips({title:'请输入您的学历'})
+      if (!this.data.schoolInfoList[i].start_at) return app.Tips({title: '请输入您的入学开始时间'})
+      if (!this.data.schoolInfoList[i].end_at) return app.Tips({title: '请输入您的入学结束时间'})
+    }
     let school = this.data.schoolInfoList.map((item, index) => {
       item = {
         id: item.id,

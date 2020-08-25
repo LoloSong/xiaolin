@@ -51,5 +51,72 @@ App({
       icon: 'none',
       duration: 2000
     })
+  },
+  Tips: function (opt, to_url) {
+    if (typeof opt == 'string') {
+      to_url = opt;
+      opt = {};
+    }
+    var title = opt.title || '', icon = opt.icon || 'none', endtime = opt.endtime || 2000;
+    if (title) wx.showToast({ title: title, icon: icon, duration: endtime })
+    if (to_url != undefined) {
+      if (typeof to_url == 'object') {
+        var tab = to_url.tab || 1, url = to_url.url || '';
+        switch (tab) {
+          case 1:
+            //一定时间后跳转至 table
+            setTimeout(function () {
+              wx.switchTab({
+                url: url
+              })
+            }, endtime);
+            break;
+          case 2:
+            //跳转至非table页面
+            setTimeout(function () {
+              wx.navigateTo({
+                url: url,
+              })
+            }, endtime);
+            break;
+          case 3:
+            //返回上页面
+            setTimeout(function () {
+              wx.navigateBack({
+                delta: parseInt(url),
+              })
+            }, endtime);
+            break;
+          case 4:
+            //关闭当前所有页面跳转至非table页面
+            setTimeout(function () {
+              wx.reLaunch({
+                url: url,
+              })
+            }, endtime);
+            break;
+          case 5:
+            //关闭当前页面跳转至非table页面
+            setTimeout(function () {
+              wx.redirectTo({
+                url: url,
+              })
+            }, endtime);
+            break;
+        }
+  
+      }else if(typeof to_url == 'function'){
+        setTimeout(function () { 
+          to_url && to_url();
+        }, endtime);
+      }else{
+        //没有提示时跳转不延迟
+        setTimeout(function () {
+          wx.navigateTo({
+            url: to_url,
+          })
+        }, title ? endtime : 0);
+      }
+    }
   }
 })
