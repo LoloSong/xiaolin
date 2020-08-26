@@ -42,7 +42,7 @@ page {
 }
 .modify_btn {
   margin-bottom: calc(170rpx + env(safe-area-inset-bottom));
-  margin-top: 280rpx;
+  margin-top: 20rpx;
 }
 .comment_box {
   width: 686rpx;
@@ -56,6 +56,7 @@ page {
   display: flex;
 }
 .comment_box .comment_item .school-name {
+  width: 150rpx;
   font-size: 24rpx;
   color: #808080;
 }

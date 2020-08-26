@@ -25,7 +25,11 @@ Page({
   },
   /** 获取个人信息 */
   getUserInfo() {
+    wx.showLoading({
+      title: '加载中',
+    })
     app.request({ url: '/wechat/member/info/self' }).then((res) => {
+      wx.hideLoading()
       if (res.code !== 200) {
         wx.showToast({
           title: res.message,
@@ -46,7 +50,11 @@ Page({
   },
   /** 获取评论列表 */
   getCommentsList() {
+    wx.showLoading({
+      title: '加载中',
+    })
     app.request({ url: '/wechat/school/comments/member', data: { member_id: this.data.memberId } }).then((res) => {
+      wx.hideLoading()
       if (res.code !== 200) {
         wx.showToast({
           title: res.message,
