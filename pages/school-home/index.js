@@ -20,6 +20,12 @@ Page({
         answer: ''
       }
     ],
+    isMessage: false,
+    administratorInfo: {
+      intro: '',
+      reason: '',
+      contact: ''
+    }
   },
   onLoad(options) {
     this.data.schoolId = options.id || ''
@@ -76,6 +82,27 @@ Page({
     })
     this.setData({
       subjectList: newList
+    })
+  },
+  /** 申请成为管理员 */
+  applyAdministrator () {
+    this.setData({
+      isMessage:true
+    })
+  },
+  goBack () {
+    this.setData({
+      isMessage:false
+    })
+  },
+  /**输入申请成为管理员弹窗 */
+  ipuAdminInfo (e) {
+    let administratorInfo = this.data.administratorInfo;
+    this.setData({
+      administratorInfo: {
+        ...administratorInfo,
+        [e.target.dataset.name]: e.detail.value
+      }
     })
   }
 })

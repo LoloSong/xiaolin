@@ -2,7 +2,7 @@
 <view class="wrapper">
   <view class="user_top">
     <view class="top_img_box">
-      <image src="https://api.collegein.com/images/top.png" />
+      <image src="/images/top.png" />
     </view>
     <view class="top_con">
       <view class="con_title f_30">{{ name }}</view>
@@ -39,6 +39,7 @@
           </view>
         </view>
       </view>
+      <view class="tap f_30 box_shadow modify_btn" bindtap="applyAdministrator">申请成为校园管理员</view>
     </view>
     <view class="tab_con_box pic_box b_r" wx:if="{{tabIndex == 1}}">
       <view class="pic"><image wx:if="{{imgList[0]}}" src="{{imgList[0].image}}" /></view>
@@ -61,8 +62,10 @@
       <view class="max_length">请输入80-120字</view>
     </view>
   </view>
+  
 </view>
-<!-- <view class="subject_popup">
+<!-- 学校留言弹窗 -->
+<view class="subject_popup" catchtouchmove="true" wx:if="{{false}}">
   <view class="popup_con">
     <view class="user_con">
       <view class="con box_shadow b_r">
@@ -84,23 +87,27 @@
     </view>
   </view>
   <view class="mask"></view>
-</view> -->
-<!-- <view class="message_popup">
-  <view class="popup_con">
-    <view class="message_con box_shadow b_r">
-      <view class="message_item">
-        <view class="avatar">
-          <image src="" />
-        </view>
-        <view class="message_box">
-
-        </view>
-        <view class="avatar">
-          <image src="" />
-        </view>
-      </view>
+</view>
+<!-- 申请成为管理员的弹窗 -->
+<view class="message_popup" wx:if="{{isMessage}}" catchtouchmove="true">
+  <view class="message_con b_r box_shadow">
+    <view class="text_wrapper box_shadow">
+      <view class="title">个人简介:</view>
+      <textarea bindinput="ipuAdminInfo" data-name="intro" value="{{administratorInfo.intro}}"></textarea>
+    </view>
+    <view class="text_wrapper box_shadow">
+      <view class="title">申请理由:</view>
+      <textarea bindinput="ipuAdminInfo" data-name="reason" value="{{administratorInfo.reason}}"></textarea>
+    </view>
+    <view class="text_wrapper box_shadow">
+      <view class="title">与该校的关联:</view>
+      <textarea bindinput="ipuAdminInfo" data-name="contact" value="{{administratorInfo.contact}}"></textarea>
+    </view>
+    <view class="btn_box">
+      <view class="goBack box_shadow btn" bind:tap="goBack">返回</view>
+      <view class="comfirm btn" bindtap="comfirm">提交</view>
     </view>
   </view>
-  <view class="mask"></view>
-</view> -->
+  <view class="mask" catchtouchmove="true"></view>
+</view>
 <tab-bar selected="{{-1}}"></tab-bar>

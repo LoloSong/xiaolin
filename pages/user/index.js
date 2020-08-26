@@ -1,18 +1,59 @@
 // pages/user/index.js
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    avatar: '',
+    firstName: '',
+    lastName:'',
+    schoolName: '',
+    commentsList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getUserInfo()
+    this.getCommentsList()
+  },
+  /** 获取个人信息 */
+  getUserInfo: function () {
+    app.request({ url: '/wechat/member/info/self' }).then((res) => {
+      if (res.code !== 200) {
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }
+      this.setData({
+        avatar: res.data.avatar,
+        firstName: res.data.first_name,
+        lastName: res.data.last_name,
+        schoolName: res.data.school[res.data.school.length - 1].name,
+      })
+    })
+  },
+  /** 获取评论列表 */
+  getCommentsList: function () {
+    app.request({ url: '/wechat/school/comments/member' }).then((res) => {
+      if (res.code !== 200) {
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }
+      this.setData({
+        commentsList: res.data.items
+      })
+    })
   },
   /**  修改个人中心 */
   goModifyInfo: function () {

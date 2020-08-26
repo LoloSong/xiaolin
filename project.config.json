@@ -105,6 +105,20 @@
 					"pathName": "pages/score/index",
 					"query": "schoolId=1&tag=1",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/user/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "历史评分",
+					"pathName": "pages/school-home/index",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

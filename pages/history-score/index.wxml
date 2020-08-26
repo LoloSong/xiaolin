@@ -1,6 +1,12 @@
 <!--pages/history-score/index.wxml-->
 <view class="wrapper">
-  <view class="user_top"><image src="/images/top.png" /></view>
+  <view class="user_top">
+    <image src="/images/top.png" />
+    <view class="avatar">
+      <image wx:if="{{avatar}}" src="{{avatar}}" />
+      <image wx:else src="/images/no_avatar.png" />
+    </view>
+  </view>
   <view class="user_info">
     <view class="user_name">XXX</view>
     <view class="user_tip">xxx大学校友</view>

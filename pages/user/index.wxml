@@ -1,18 +1,24 @@
 <!--pages/user/index.wxml-->
 <view class="wrapper">
-  <view class="user_top"><image src="https://api.collegein.com/images/top.png" /></view>
+  <view class="user_top">
+    <image src="/images/top.png" />
+    <view class="avatar">
+      <image wx:if="{{avatar}}" src="{{avatar}}" />
+      <image wx:else src="/images/no_avatar.png" />
+    </view>
+  </view>
   <view class="user_info">
-    <view class="user_name">XXX</view>
-    <view class="user_tip">xxx大学校友</view>
+    <view class="user_name">{{firstName}}{{lastName}}</view>
+    <view class="user_tip">{{schoolName}}大学校友</view>
   </view>
   <view class="tap f_30 box_shadow">评分记录</view>
   <view class="comment_box">
-    <view class="comment_item box_shadow b_r f-30">
-        <view class="school-name">xxx大学</view>
-        <view class="comment">留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</view>
+    <view class="comment_item box_shadow b_r f-30" wx:for="{{commentsList}}" wx:key="this">
+        <view class="school-name">{{item.school.name}}大学</view>
+        <view class="comment">{{item.content}}</view>
         <view class="score">
             <circular-progress-view class="answer" percent="{{70}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
-                <view class="score_text">4.2</view>
+                <view class="score_text">{{item.average}}</view>
             </circular-progress-view>
         </view>
     </view>

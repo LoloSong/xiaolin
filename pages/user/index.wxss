@@ -9,6 +9,8 @@ page {
 }
 .wrapper .user_info {
   text-align: center;
+  position: relative;
+  margin-top: 38rpx;
 }
 .wrapper .user_info .user_name {
   font-size: 40rpx;
@@ -21,10 +23,25 @@ page {
 }
 .user_top {
   width: 750rpx;
-  height: 444rpx;
+  height: 450rpx;
+  position: relative;
+}
+.user_top .avatar {
+  position: absolute;
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 30rpx;
+}
+.user_top .avatar image {
+  overflow: hidden;
 }
 .modify_btn {
-  margin-bottom: 56rpx;
+  margin-bottom: calc(170rpx + env(safe-area-inset-bottom));
   margin-top: 280rpx;
 }
 .comment_box {

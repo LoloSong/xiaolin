@@ -31,4 +31,4 @@
 		</view>
 	</view>
 </view>
-<tar-bar />
+<tar-bar selected="{{1}}"/>

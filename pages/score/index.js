@@ -85,7 +85,28 @@ Page({
   },
   /** 提交 */
   comfirm: function () {
-
+    for (var i = 0; i < this.data.subjectList.length; i++) {
+      if (!this.data.subjectList[i].answer) return app.Tips({title: '请选择您的答案'})
+    }
+    if (!this.data.message) return app.Tips({title: '请输入留言'})
+    let data = {
+      school_id: this.data.schoolId,
+      tag: this.data.tag,
+      content: this.data.message,
+      type: this.data.isAnony ? 0 : 1,
+      select: this.data.subjectList.reduce((prev, cur, index) => {
+        if (index != this.data.subjectList.length - 1) {
+          prev += `${cur.id}:${cur.answer},`
+        } else {
+          prev += `${cur.id}:${cur.answer}`
+        }
+        return prev
+      }, '')
+    }
+    app.request({method: 'POST', url: '/wechat/school/comments/add', data}).then(res=> {
+      if (res.code != '200') return app.Tips({title: res.message})
+      app.Tips({title: '已提交您的评论'}, {tab: 1, url: '/pages/user/index'})
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
