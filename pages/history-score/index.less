@@ -1,78 +1,86 @@
-/* pages/history-score/index.wxss */
 /* pages/user/index.wxss */
 page{
-    background-color: #efefef;
-  }
-  .wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .user_info{
-      text-align: center;
-      .user_name{
-        font-size: 40rpx;
-        color: #666;
-      }
-      .user_tip{
-        font-size: 32rpx;
-        line-height: 40rpx;
-        color: #999;
-      }
+  background-color: #efefef;
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .user_info{
+    text-align: center;
+    position: relative;
+    margin-top: 38rpx;
+    .user_name{
+      font-size: 40rpx;
+      color: #666;
+    }
+    .user_tip{
+      font-size: 32rpx;
+      line-height: 40rpx;
+      color: #999;
     }
   }
-  .comment_box{
-    width: 686rpx;
-    margin-top: 70rpx;
-    .comment_item{
-      background-color: #fff;
-      padding: 32rpx 56rpx;
-      box-sizing: border-box;
-      margin-bottom: 34rpx;
-      display: flex;
-      .school-name{
-        font-size: 24rpx;
+}
+.user_top{
+  width: 750rpx;
+  height: 450rpx;
+  position: relative;
+  .avatar{
+    position: absolute;
+    width: 220rpx;
+    height: 220rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 30rpx;
+    image{
+      overflow: hidden;
+    }
+  }
+}
+.modify_btn{
+  margin-bottom: calc(170rpx + env(safe-area-inset-bottom));
+  margin-top: 280rpx;
+  // position: absolute;
+  // left: 0;
+  // right: 0;
+  // margin: auto;
+  // bottom:  calc(170rpx + env(safe-area-inset-bottom));
+}
+.comment_box{
+  width: 686rpx;
+  margin-top: 70rpx;
+  margin-bottom: calc(170rpx + env(safe-area-inset-bottom));
+  .comment_item{
+    background-color: #fff;
+    padding: 32rpx 56rpx;
+    box-sizing: border-box;
+    margin-bottom: 34rpx;
+    display: flex;
+    .school-name{
+      font-size: 24rpx;
+      color: #808080;
+    }
+    .comment{
+      flex: 1;
+      margin-left: 46rpx;
+      margin-right: 56rpx;
+      font-size: 16rpx;
+      color: #999;
+      line-height: 24rpx;
+    }
+    .score{
+      .score_text{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26rpx;
         color: #808080;
       }
-      .comment{
-        flex: 1;
-        margin-left: 46rpx;
-        margin-right: 56rpx;
-        font-size: 16rpx;
-        color: #999;
-        line-height: 24rpx;
-      }
-      .score{
-        .score_text{
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 26rpx;
-          color: #808080;
-        }
-      }
     }
   }
-  .user_top{
-    width: 750rpx;
-    height: 450rpx;
-    position: relative;
-    .avatar{
-      position: absolute;
-      width: 220rpx;
-      height: 220rpx;
-      border-radius: 50%;
-      overflow: hidden;
-      left: 0;
-      right: 0;
-      margin: auto;
-      bottom: 30rpx;
-      image{
-        overflow: hidden;
-      }
-    }
-  }
-  .modify_btn{
-    margin-bottom: 56rpx;
-  }
+}

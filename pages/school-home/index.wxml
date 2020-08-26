@@ -29,25 +29,27 @@
 		<view class="tab_con_box score_wrapper" wx:if="{{tabIndex == 0}}">
 			<view class="tap f_30">综合分数<text>{{ score }}</text></view>
 			<view class="con_tab_item box_shadow b_r" wx:for="{{commentsList}}" wx:key="index" data-comment_id="{{item.id}}" bindtap="showDetail">
-				<view class="avatar box_shadow">
+				<view class="avatar box_shadow" data-id="{{item.id}}" catch:tap="goHistoryScore">
 					<image src="{{item.member.avatar}}" />
 				</view>
-				<view class="message">{{item.content}}</view>
-				<view class="score_box">
-					<view class="score">
-						<circular-progress-view class="answer" data-index="{{3}}" percent="{{60}}" progressSize="{{72}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
-							<view class="score_text">{{item.average}}</view>
-						</circular-progress-view>
-					</view>
-					<view class="score_btn_box">
-						<view class="btn btn_weixin">
-							<image src="/images/weixin.png" />
-						</view>
-						<view class="btn btn_thumbs">
-							<image src="/images/heart.png" />
-						</view>
-					</view>
-				</view>
+        <block catch:tap="getSubjectDetail" data-id="{{item.id}}">
+          <view class="message">{{item.content}}</view>
+          <view class="score_box">
+            <view class="score">
+              <circular-progress-view class="answer" data-index="{{3}}" percent="{{item.progress}}" progressSize="{{72}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+                <view class="score_text">{{item.average}}</view>
+              </circular-progress-view>
+            </view>
+            <view class="score_btn_box">
+              <view class="btn btn_weixin">
+                <image src="/images/weixin.png" />
+              </view>
+              <view class="btn btn_thumbs">
+                <image src="/images/heart.png" />
+              </view>
+            </view>
+          </view>
+        </block>
 			</view>
 			<!-- <view class="tap f_30 box_shadow modify_btn" bindtap="applyAdministrator">申请成为校园管理员</view> -->
 		</view>
@@ -94,15 +96,18 @@
 </view>
 <!-- 学校留言弹窗 -->
 <view class="subject_popup" catchtouchmove="true" wx:if="{{isShowDetail}}">
-	<view class="popup_con">
+	<view class="popup_con box_shadow b_r">
 		<view class="user_con">
-			<view class="con box_shadow b_r">
+			<view class="con">
 				<view class="user_tip_box">
-					<view class="user_tip">xxx大学</view>
-					<view class="message">留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</view>
+					<view class="user_tip box_shadow">
+            <image wx:if="{{member.avatar}}" src="{{member.avatar}}" mode="aspectFill" />
+            <image wx:else src="/images/no_avatar.png" />
+          </view>
+					<view class="message">{{content}}</view>
 					<view class="score">
-						<circular-progress-view class="answer" percent="{{72}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
-							<view class="score">4.2分</view>
+						<circular-progress-view class="answer" percent="{{progress}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+							<view class="score">{{average}}分</view>
 						</circular-progress-view>
 					</view>
 				</view>
@@ -114,7 +119,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="mask"></view>
+	<view class="mask" bindtap="closeSubjectPopup"></view>
 </view>
 <!-- 申请成为管理员的弹窗 -->
 <view class="message_popup" wx:if="{{isMessage}}" catchtouchmove="true">

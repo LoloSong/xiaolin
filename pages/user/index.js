@@ -18,8 +18,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.getUserInfo()
     // this.getCommentsList()
+  },
+  onShow: function () {
+    this.getUserInfo()
   },
   /** 获取个人信息 */
   getUserInfo() {
@@ -53,8 +55,12 @@ Page({
         })
         return
       }
+      let commentsList = res.data.items.map(item => {
+        item.progress = app.frac(item.average)
+        return item
+      })
       this.setData({
-        commentsList: res.data.items
+        commentsList: commentsList
       })
     })
   },
@@ -74,9 +80,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
+  
 
   /**
    * 生命周期函数--监听页面隐藏

@@ -1,4 +1,4 @@
-<!--pages/history-score/index.wxml-->
+<!--pages/user/index.wxml-->
 <view class="wrapper">
   <view class="user_top">
     <image src="/images/top.png" />
@@ -8,21 +8,20 @@
     </view>
   </view>
   <view class="user_info">
-    <view class="user_name">XXX</view>
-    <view class="user_tip">xxx大学校友</view>
+    <view class="user_name">{{firstName}}{{lastName}}</view>
+    <view class="user_tip">{{schoolName}}大学校友</view>
   </view>
-  <view class="tap f_30 box_shadow">历史评分</view>
+  <view class="tap f_30 box_shadow">历史学分</view>
   <view class="comment_box">
-    <view class="comment_item box_shadow b_r f-30">
-        <view class="school-name">xxx大学</view>
-        <view class="comment">留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</view>
+    <view class="comment_item box_shadow b_r f-30" wx:for="{{commentsList}}" wx:key="this">
+        <view class="school-name">{{item.school.name}}大学</view>
+        <view class="comment">{{item.content}}</view>
         <view class="score">
-            <circular-progress-view class="answer" percent="{{70}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
-                <view class="score_text">4.2</view>
+            <circular-progress-view class="answer" percent="{{item.progress}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+                <view class="score_text">{{item.average}}</view>
             </circular-progress-view>
         </view>
     </view>
   </view>
-  <!-- <view class="tap f_30 box_shadow modify_btn">点击修改个人信息</view> -->
 </view>
 <tab-bar selected="{{2}}"></tab-bar>

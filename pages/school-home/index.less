@@ -235,10 +235,16 @@ page{
     position: absolute;
     left: 0;
     right: 0;
-    top: 180rpx;
+    top: 80rpx;
+    bottom: calc(140rpx + env(safe-area-inset-bottom));
     margin: auto;
     display: flex;
     justify-content: center;
+    width: 676rpx;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 58rpx 68rpx;
+    margin-top: 54rpx;
   }
   .mask{
     width: 100%;
@@ -247,6 +253,9 @@ page{
   }
 }
 .user_con{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
   .user_tip_box{
     display: flex;
     align-items: flex-start;
@@ -254,8 +263,14 @@ page{
     margin-bottom: 78rpx;
     .user_tip{
       color: #808080;
-      font-size: 24rpx;
+      // font-size: 24rpx;
+      width: 74rpx;
+      height: 74rpx;
+      border-radius: 50%;
       margin-right: 38rpx;
+      image{
+        border-radius: 50%;
+      }
     }
     .score{
       font-size: 22rpx;
@@ -271,11 +286,7 @@ page{
     }
   }
   .con{
-    width: 676rpx;
-    background-color: #fff;
-    box-sizing: border-box;
-    padding: 58rpx 68rpx;
-    margin-top: 54rpx;
+    
     .item{
       margin-bottom: 34rpx;
       .subject_title{

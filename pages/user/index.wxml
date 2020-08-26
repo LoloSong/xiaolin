@@ -17,7 +17,7 @@
         <view class="school-name">{{item.school.name}}大学</view>
         <view class="comment">{{item.content}}</view>
         <view class="score">
-            <circular-progress-view class="answer" percent="{{70}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+            <circular-progress-view class="answer" percent="{{item.progress}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
                 <view class="score_text">{{item.average}}</view>
             </circular-progress-view>
         </view>

@@ -1,4 +1,3 @@
-/* pages/history-score/index.wxss */
 /* pages/user/index.wxss */
 page {
   background-color: #efefef;
@@ -10,6 +9,8 @@ page {
 }
 .wrapper .user_info {
   text-align: center;
+  position: relative;
+  margin-top: 38rpx;
 }
 .wrapper .user_info .user_name {
   font-size: 40rpx;
@@ -20,9 +21,33 @@ page {
   line-height: 40rpx;
   color: #999;
 }
+.user_top {
+  width: 750rpx;
+  height: 450rpx;
+  position: relative;
+}
+.user_top .avatar {
+  position: absolute;
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 30rpx;
+}
+.user_top .avatar image {
+  overflow: hidden;
+}
+.modify_btn {
+  margin-bottom: calc(170rpx + env(safe-area-inset-bottom));
+  margin-top: 280rpx;
+}
 .comment_box {
   width: 686rpx;
   margin-top: 70rpx;
+  margin-bottom: calc(170rpx + env(safe-area-inset-bottom));
 }
 .comment_box .comment_item {
   background-color: #fff;
@@ -51,26 +76,4 @@ page {
   justify-content: center;
   font-size: 26rpx;
   color: #808080;
-}
-.user_top {
-  width: 750rpx;
-  height: 450rpx;
-  position: relative;
-}
-.user_top .avatar {
-  position: absolute;
-  width: 220rpx;
-  height: 220rpx;
-  border-radius: 50%;
-  overflow: hidden;
-  left: 0;
-  right: 0;
-  margin: auto;
-  bottom: 30rpx;
-}
-.user_top .avatar image {
-  overflow: hidden;
-}
-.modify_btn {
-  margin-bottom: 56rpx;
 }

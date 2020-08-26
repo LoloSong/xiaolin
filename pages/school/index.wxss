@@ -31,14 +31,15 @@ page {
   align-items: center;
 }
 .wrapper .swiper_box {
-  width: 520rpx;
+  width: 100%;
   height: 860rpx;
 }
 .wrapper .swiper_box swiper {
   height: 100%;
 }
 .wrapper .swiper_box .swiper-item {
-  width: 100%;
+  width: 520rpx;
+  margin-left: 115rpx;
   height: 790rpx;
 }
 .wrapper .btn_box {

@@ -11,22 +11,16 @@ Page({
     imgList: [],  // 相册列表
     commentsList: [], // 评论列表
     isShowDetail: false, // 详细评分弹窗
-    subjectList: [
-      {
-        title: '学生会（Student Association',
-        answer: ''
-      },
-      {
-        title: '颜值（Appearance）',
-        answer: ''
-      }
-    ],
+    subjectList: [],
     isMessage: false,
     administratorInfo: {
       intro: '',
       reason: '',
       contact: ''
-    }
+    },
+    progress:0,
+    content: '',
+    average: '',
   },
   onLoad(options) {
     this.data.schoolId = options.id || ''
@@ -62,15 +56,35 @@ Page({
         })
         return
       }
+      let commentsList = res.data.items.map(item =>{
+        item.progress = app.frac(item.average)
+        return item
+      })
       this.setData({
-        commentsList: res.data.items
+        commentsList: commentsList
       })
     })
   },
   showDetail(e) {
     const { comment_id } = e.currentTarget.dataset
     app.request({ url: '/wechat/school/comments/detail', data: { comment_id } }).then((res) => {
-      console.log(res)
+      let subjectList = res.data.score.map((item, index) => {
+        item.answer = item.pivot.score
+        return item
+      })
+      this.setData({
+        subjectList: subjectList,
+        member: res.data.member,
+        average: res.data.average,
+        content: res.data.content,
+        progress: app.frac(res.data.average),
+        isShowDetail: true
+      })
+    })
+  },
+  closeSubjectPopup () {
+    this.setData({
+      isShowDetail: false
     })
   },
   /** 切换tab */
@@ -113,6 +127,12 @@ Page({
         ...administratorInfo,
         [e.target.dataset.name]: e.detail.value
       }
+    })
+  },
+  /** 历史评分 */
+  goHistoryScore (e) {
+    wx.navigateTo({
+      url: `/pages/history-score/index?id=${e.currentTarget.dataset.id}`
     })
   }
 })

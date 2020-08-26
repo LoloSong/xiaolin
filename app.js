@@ -118,5 +118,8 @@ App({
         }, title ? endtime : 0);
       }
     }
+  },
+  frac (score) {
+    return score * 100 / 5
   }
 })
