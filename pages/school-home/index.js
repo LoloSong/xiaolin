@@ -10,6 +10,7 @@ Page({
     desc: '', // 学校简介
     imgList: [],  // 相册列表
     commentsList: [], // 评论列表
+    isShowDetail: false, // 详细评分弹窗
     subjectList: [
       {
         title: '学生会（Student Association',
@@ -61,6 +62,15 @@ Page({
         })
         return
       }
+      this.setData({
+        commentsList: res.data.items
+      })
+    })
+  },
+  showDetail(e) {
+    const { comment_id } = e.currentTarget.dataset
+    app.request({ url: '/wechat/school/comments/detail', data: { comment_id } }).then((res) => {
+      console.log(res)
     })
   },
   /** 切换tab */
@@ -85,18 +95,18 @@ Page({
     })
   },
   /** 申请成为管理员 */
-  applyAdministrator () {
+  applyAdministrator() {
     this.setData({
-      isMessage:true
+      isMessage: true
     })
   },
-  goBack () {
+  goBack() {
     this.setData({
-      isMessage:false
+      isMessage: false
     })
   },
   /**输入申请成为管理员弹窗 */
-  ipuAdminInfo (e) {
+  ipuAdminInfo(e) {
     let administratorInfo = this.data.administratorInfo;
     this.setData({
       administratorInfo: {

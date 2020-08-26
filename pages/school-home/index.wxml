@@ -1,113 +1,141 @@
 <!--pages/school-home/index.wxml-->
 <view class="wrapper">
-  <view class="user_top">
-    <view class="top_img_box">
-      <image src="/images/top.png" />
-    </view>
-    <view class="top_con">
-      <view class="con_title f_30">{{ name }}</view>
-      <view class="avatar_box">
-        <image class="school_logo" src="{{ logo }}" />
-        <view class="icon_avatar">
-          <image src="" />
-        </view>
-      </view>
-    </view>
-  </view>
-  <view class="tab_box">
-    <view class="tab tab_first" data-index="{{0}}" bindtap="changeTab"><view class="tab_inner box_shadow {{tabIndex == 0 ? 'active_tab' : ''}}">评分</view></view>
-    <view class="tab" data-index="{{1}}" bindtap="changeTab"><view class="tab_inner box_shadow {{tabIndex == 1 ? 'active_tab' : ''}}">相册</view></view>
-    <view class="tab tab_first" data-index="{{2}}" bindtap="changeTab"><view class="tab_inner box_shadow {{tabIndex == 2 ? 'active_tab' : ''}}">简介</view></view>
-  </view>
-  <view class="tab_content">
-    <view class="tab_con_box score_wrapper" wx:if="{{tabIndex == 0}}">
-      <view class="tap f_30">综合分数<text>{{ score }}</text></view>
-      <view class="con_tab_item box_shadow b_r">
-        <view class="avatar box_shadow"><image src="" /></view>
-        <view class="message">留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</view>
-        <view class="score_box">
-          <view class="score">
-            <circular-progress-view class="answer" data-index="{{3}}" percent="{{60}}" progressSize="{{72}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
-              <view class="score_text">4.7</view>
-            </circular-progress-view>
-          </view>
-          <view class="score_btn_box">
-            <view class="btn btn_weixin"><image src="/images/weixin.png" /></view>
-            <view class="btn btn_thumbs">
-              <image src="/images/heart.png" />
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="tap f_30 box_shadow modify_btn" bindtap="applyAdministrator">申请成为校园管理员</view>
-    </view>
-    <view class="tab_con_box pic_box b_r" wx:if="{{tabIndex == 1}}">
-      <view class="pic"><image wx:if="{{imgList[0]}}" src="{{imgList[0].image}}" /></view>
-      <view class="pic"><image wx:if="{{imgList[1]}}" src="{{imgList[1].image}}" /></view>
-      <view class="pic"><image wx:if="{{imgList[2]}}" src="{{imgList[2].image}}" /></view>
-      <view class="pic"><image wx:if="{{imgList[3]}}" src="{{imgList[3].image}}" /></view>
-      <view class="pic"><image wx:if="{{imgList[4]}}" src="{{imgList[4].image}}" /></view>
-      <view class="pic"><image wx:if="{{imgList[5]}}" src="{{imgList[5].image}}" /></view>
-      <view class="pic"><image wx:if="{{imgList[6]}}" src="{{imgList[6].image}}" /></view>
-      <view class="pic"><image wx:if="{{imgList[7]}}" src="{{imgList[7].image}}" /></view>
-      <view class="pic"><image wx:if="{{imgList[8]}}" src="{{imgList[8].image}}" /></view>
-      <!-- <view class="pic">
+	<view class="user_top">
+		<view class="top_img_box">
+			<image src="/images/top.png" />
+		</view>
+		<view class="top_con">
+			<view class="con_title f_30">{{ name }}</view>
+			<view class="avatar_box">
+				<image class="school_logo" src="{{ logo }}" />
+				<view class="icon_avatar">
+					<image src="" />
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="tab_box">
+		<view class="tab tab_first" data-index="{{0}}" bindtap="changeTab">
+			<view class="tab_inner box_shadow {{tabIndex == 0 ? 'active_tab' : ''}}">评分</view>
+		</view>
+		<view class="tab" data-index="{{1}}" bindtap="changeTab">
+			<view class="tab_inner box_shadow {{tabIndex == 1 ? 'active_tab' : ''}}">相册</view>
+		</view>
+		<view class="tab tab_first" data-index="{{2}}" bindtap="changeTab">
+			<view class="tab_inner box_shadow {{tabIndex == 2 ? 'active_tab' : ''}}">简介</view>
+		</view>
+	</view>
+	<view class="tab_content">
+		<view class="tab_con_box score_wrapper" wx:if="{{tabIndex == 0}}">
+			<view class="tap f_30">综合分数<text>{{ score }}</text></view>
+			<view class="con_tab_item box_shadow b_r" wx:for="{{commentsList}}" wx:key="index" data-comment_id="{{item.id}}" bindtap="showDetail">
+				<view class="avatar box_shadow">
+					<image src="{{item.member.avatar}}" />
+				</view>
+				<view class="message">{{item.content}}</view>
+				<view class="score_box">
+					<view class="score">
+						<circular-progress-view class="answer" data-index="{{3}}" percent="{{60}}" progressSize="{{72}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+							<view class="score_text">{{item.average}}</view>
+						</circular-progress-view>
+					</view>
+					<view class="score_btn_box">
+						<view class="btn btn_weixin">
+							<image src="/images/weixin.png" />
+						</view>
+						<view class="btn btn_thumbs">
+							<image src="/images/heart.png" />
+						</view>
+					</view>
+				</view>
+			</view>
+			<!-- <view class="tap f_30 box_shadow modify_btn" bindtap="applyAdministrator">申请成为校园管理员</view> -->
+		</view>
+		<view class="tab_con_box pic_box b_r" wx:if="{{tabIndex == 1}}">
+			<view class="pic">
+				<image wx:if="{{imgList[0]}}" src="{{imgList[0].image}}" />
+			</view>
+			<view class="pic">
+				<image wx:if="{{imgList[1]}}" src="{{imgList[1].image}}" />
+			</view>
+			<view class="pic">
+				<image wx:if="{{imgList[2]}}" src="{{imgList[2].image}}" />
+			</view>
+			<view class="pic">
+				<image wx:if="{{imgList[3]}}" src="{{imgList[3].image}}" />
+			</view>
+			<view class="pic">
+				<image wx:if="{{imgList[4]}}" src="{{imgList[4].image}}" />
+			</view>
+			<view class="pic">
+				<image wx:if="{{imgList[5]}}" src="{{imgList[5].image}}" />
+			</view>
+			<view class="pic">
+				<image wx:if="{{imgList[6]}}" src="{{imgList[6].image}}" />
+			</view>
+			<view class="pic">
+				<image wx:if="{{imgList[7]}}" src="{{imgList[7].image}}" />
+			</view>
+			<view class="pic">
+				<image wx:if="{{imgList[8]}}" src="{{imgList[8].image}}" />
+			</view>
+			<!-- <view class="pic">
         <view class="dot"></view>
         <view class="dot"></view>
         <view class="dot"></view>
       </view> -->
-    </view>
-    <view class="tab_con_box message_box b_r box_shadow" wx:if="{{tabIndex == 2}}">
-      <textarea value="{{desc}}" maxlength="120"></textarea>
-      <view class="max_length">请输入80-120字</view>
-    </view>
-  </view>
-  
+		</view>
+		<view class="tab_con_box message_box b_r box_shadow" wx:if="{{tabIndex == 2}}">
+			<textarea value="{{desc}}" maxlength="120"></textarea>
+			<view class="max_length">请输入80-120字</view>
+		</view>
+	</view>
+
 </view>
 <!-- 学校留言弹窗 -->
-<view class="subject_popup" catchtouchmove="true" wx:if="{{false}}">
-  <view class="popup_con">
-    <view class="user_con">
-      <view class="con box_shadow b_r">
-        <view class="user_tip_box">
-          <view class="user_tip">xxx大学</view>
-          <view class="message">留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</view>
-          <view class="score">
-            <circular-progress-view class="answer" percent="{{72}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
-              <view class="score">4.2分</view>
-            </circular-progress-view>
-          </view>
-        </view>
-        <block>
-          <block wx:for="{{subjectList}}" wx:key="index">
-            <subject-item item="{{item}}" index="{{index}}" bind:goAnswer="goAnswer"></subject-item>
-          </block>
-        </block>
-      </view>
-    </view>
-  </view>
-  <view class="mask"></view>
+<view class="subject_popup" catchtouchmove="true" wx:if="{{isShowDetail}}">
+	<view class="popup_con">
+		<view class="user_con">
+			<view class="con box_shadow b_r">
+				<view class="user_tip_box">
+					<view class="user_tip">xxx大学</view>
+					<view class="message">留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</view>
+					<view class="score">
+						<circular-progress-view class="answer" percent="{{72}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+							<view class="score">4.2分</view>
+						</circular-progress-view>
+					</view>
+				</view>
+				<block>
+					<block wx:for="{{subjectList}}" wx:key="index">
+						<subject-item item="{{item}}" index="{{index}}" bind:goAnswer="goAnswer"></subject-item>
+					</block>
+				</block>
+			</view>
+		</view>
+	</view>
+	<view class="mask"></view>
 </view>
 <!-- 申请成为管理员的弹窗 -->
 <view class="message_popup" wx:if="{{isMessage}}" catchtouchmove="true">
-  <view class="message_con b_r box_shadow">
-    <view class="text_wrapper box_shadow">
-      <view class="title">个人简介:</view>
-      <textarea bindinput="ipuAdminInfo" data-name="intro" value="{{administratorInfo.intro}}"></textarea>
-    </view>
-    <view class="text_wrapper box_shadow">
-      <view class="title">申请理由:</view>
-      <textarea bindinput="ipuAdminInfo" data-name="reason" value="{{administratorInfo.reason}}"></textarea>
-    </view>
-    <view class="text_wrapper box_shadow">
-      <view class="title">与该校的关联:</view>
-      <textarea bindinput="ipuAdminInfo" data-name="contact" value="{{administratorInfo.contact}}"></textarea>
-    </view>
-    <view class="btn_box">
-      <view class="goBack box_shadow btn" bind:tap="goBack">返回</view>
-      <view class="comfirm btn" bindtap="comfirm">提交</view>
-    </view>
-  </view>
-  <view class="mask" catchtouchmove="true"></view>
+	<view class="message_con b_r box_shadow">
+		<view class="text_wrapper box_shadow">
+			<view class="title">个人简介:</view>
+			<textarea bindinput="ipuAdminInfo" data-name="intro" value="{{administratorInfo.intro}}"></textarea>
+		</view>
+		<view class="text_wrapper box_shadow">
+			<view class="title">申请理由:</view>
+			<textarea bindinput="ipuAdminInfo" data-name="reason" value="{{administratorInfo.reason}}"></textarea>
+		</view>
+		<view class="text_wrapper box_shadow">
+			<view class="title">与该校的关联:</view>
+			<textarea bindinput="ipuAdminInfo" data-name="contact" value="{{administratorInfo.contact}}"></textarea>
+		</view>
+		<view class="btn_box">
+			<view class="goBack box_shadow btn" bind:tap="goBack">返回</view>
+			<view class="comfirm btn" bindtap="comfirm">提交</view>
+		</view>
+	</view>
+	<view class="mask" catchtouchmove="true"></view>
 </view>
 <tab-bar selected="{{-1}}"></tab-bar>

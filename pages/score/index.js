@@ -93,10 +93,10 @@ Page({
       school_id: this.data.schoolId,
       tag: this.data.tag,
       content: this.data.message,
-      type: this.data.isAnony ? 0 : 1,
+      type: this.data.isAnony ? 1 : 0,
       select: this.data.subjectList.reduce((prev, cur, index) => {
         if (index != this.data.subjectList.length - 1) {
-          prev += `${cur.id}:${cur.answer},`
+          prev += `${cur.id}:${cur.answer};`
         } else {
           prev += `${cur.id}:${cur.answer}`
         }

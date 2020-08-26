@@ -53,6 +53,7 @@ Page({
     })
   },
   selectSchool(e) {
+    console.log(e.target.dataset.school_name)
     this.setData({
       searchId: e.target.dataset.school_id,
       searchName: e.target.dataset.school_name,
@@ -79,6 +80,17 @@ Page({
       })
       return
     }
-    wx.navigateTo({url: `/pages/score/index?schoolId=${this.data.searchId}&tag=${this.data.tag}` })
+    // 判断是否评论过
+    app.request({ url: '/wechat/school/comments/status', data: { school_id: this.data.searchId, tag: this.data.tag } }).then((res) => {
+      if (res.code !== 200) {
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }
+      wx.navigateTo({ url: `/pages/score/index?schoolId=${this.data.searchId}&tag=${this.data.tag}` })
+    })
   }
 })
