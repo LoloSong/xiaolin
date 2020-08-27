@@ -95,7 +95,7 @@
 
 </view>
 <!-- 学校留言弹窗 -->
-<view class="subject_popup" catchtouchmove="true" wx:if="{{isShowDetail}}">
+<view class="subject_popup"  wx:if="{{isShowDetail}}">
 	<view class="popup_con box_shadow b_r">
 		<view class="user_con">
 			<view class="con">
@@ -113,7 +113,7 @@
 				</view>
 				<block>
 					<block wx:for="{{subjectList}}" wx:key="index">
-						<subject-item item="{{item}}" index="{{index}}" bind:goAnswer="goAnswer"></subject-item>
+						<subject-item isTap="{{false}}" item="{{item}}" index="{{index}}"></subject-item>
 					</block>
 				</block>
 			</view>
