@@ -95,11 +95,7 @@
 
 </view>
 <!-- 学校留言弹窗 -->
-<<<<<<< HEAD
-<view class="subject_popup"  wx:if="{{isShowDetail}}">
-=======
 <view class="subject_popup" wx:if="{{isShowDetail}}">
->>>>>>> 7ea50960afa56244be187334721f4b3ad484ac0c
 	<view class="popup_con box_shadow b_r">
 		<view class="user_con">
 			<view class="con">

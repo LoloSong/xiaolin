@@ -35,7 +35,8 @@ Component({
     switchTab(e) {
       const data = e.currentTarget.dataset
       const url = data.path
-      if (url === '/pages/score/index') {
+      console.log(url)
+      if (url === '/pages/school/index') {
         const isInfo = wx.getStorageSync('isInfo')
         if (isInfo) {
           wx.switchTab({ url })
