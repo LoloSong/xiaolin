@@ -19,7 +19,11 @@ Page({
     this.clearSearch()
   },
   getList() {
+    wx.showLoading({
+      title: '加载中',
+    })
     app.request({ url: '/wechat/school/index' }).then((res) => {
+      wx.hideLoading()
       if (res.code !== 200) {
         wx.showToast({
           title: res.message,

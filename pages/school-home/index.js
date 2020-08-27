@@ -47,7 +47,11 @@ Page({
     })
   },
   getCommentsList() {
+    wx.showLoading({
+      title: '加载中',
+    })
     app.request({ url: '/wechat/school/comments', data: { school_id: this.data.schoolId } }).then((res) => {
+      wx.hideLoading()
       if (res.code !== 200) {
         wx.showToast({
           title: res.message,
@@ -67,7 +71,19 @@ Page({
   },
   showDetail(e) {
     const { comment_id } = e.currentTarget.dataset
+    wx.showLoading({
+      title: '加载中',
+    })
     app.request({ url: '/wechat/school/comments/detail', data: { comment_id } }).then((res) => {
+      wx.hideLoading()
+      if (res.code !== 200) {
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }
       let subjectList = res.data.score.map((item, index) => {
         item.answer = item.pivot.score
         return item
