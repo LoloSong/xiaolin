@@ -50,6 +50,9 @@ Page({
         })
         return
       }
+      if (res.data.school.length <= 0) {
+        return
+      }
       let schoolInfoList = res.data.school.map((item) => {
         item = {
           ...item.detail,
@@ -277,7 +280,7 @@ Page({
         })
         return
       }
-      wx.navigateTo({
+      wx.switchTab({
         url: '/pages/school/index'
       })
     })

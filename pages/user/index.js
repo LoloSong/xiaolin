@@ -38,12 +38,13 @@ Page({
         })
         return
       }
+      const schoolName = res.data.school.length > 0 ? res.data.school[res.data.school.length - 1].name : ''
       this.setData({
         memberId: res.data.id,
         avatar: res.data.avatar,
         firstName: res.data.first_name,
         lastName: res.data.last_name,
-        schoolName: res.data.school[res.data.school.length - 1].name,
+        schoolName: schoolName,
       })
       this.getCommentsList()
     })

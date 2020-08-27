@@ -92,5 +92,10 @@ Page({
       }
       wx.navigateTo({ url: `/pages/score/index?schoolId=${this.data.searchId}&tag=${this.data.tag}` })
     })
+  },
+  goIndex() {
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
   }
 })

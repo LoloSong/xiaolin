@@ -39,14 +39,14 @@ Page({
   },
   getIsInfo() {
     app.request({ url: '/wechat/member/info/status' }).then((res) => {
-      if (res.code !== 200) {
-        wx.showToast({
-          title: res.message,
-          icon: 'none',
-          duration: 2000
-        })
-        return
-      }
+      // if (res.code !== 200) {
+      //   wx.showToast({
+      //     title: res.message,
+      //     icon: 'none',
+      //     duration: 2000
+      //   })
+      //   return
+      // }
       if (res.code === 40002) {
         wx.setStorageSync('isInfo', false)
       } else {
