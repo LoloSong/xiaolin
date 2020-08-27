@@ -36,8 +36,6 @@ Component({
       const data = e.currentTarget.dataset
       const url = data.path
       const isInfo = wx.getStorageSync('isInfo')
-      console.log(isInfo)
-      console.log(url)
       if (url === '/pages/school/index') {
         console.log(isInfo)
         if (isInfo) {

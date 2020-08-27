@@ -9,6 +9,10 @@ Component({
     },
     index:{
       type: Number
+    },
+    isTap: {
+      type: Boolean,
+      value: true
     }
   },
 
@@ -24,6 +28,7 @@ Component({
    */
   methods: {
     goAnswer: function (e) {
+      if (!this.data.isTap) return
       let that = this,data = e.currentTarget.dataset;
       this.triggerEvent('goAnswer', {'data': data})
     }

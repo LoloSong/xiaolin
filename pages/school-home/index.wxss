@@ -80,7 +80,7 @@ page {
   top: -80rpx;
 }
 .wrapper .tab_content {
-  margin-bottom: 60rpx;
+  margin-bottom: calc(180rpx + env(safe-area-inset-bottom));
 }
 .wrapper .score_wrapper {
   display: flex;

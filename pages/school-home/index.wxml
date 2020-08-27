@@ -113,7 +113,7 @@
 				</view>
 				<block>
 					<block wx:for="{{subjectList}}" wx:key="index">
-						<subject-item item="{{item}}" index="{{index}}" bind:goAnswer="goAnswer"></subject-item>
+						<subject-item isTap="{{false}}" item="{{item}}" index="{{index}}"></subject-item>
 					</block>
 				</block>
 			</view>

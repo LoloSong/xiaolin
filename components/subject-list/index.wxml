@@ -14,7 +14,7 @@
     <circular-progress-view class="answer" bindtap="goAnswer" data-answer="4" percent="{{80}}" data-index="{{index}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
       <view class="{{item.answer == '4' ? 'selected':''}}"></view>
     </circular-progress-view>
-    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="5" percent="{{98}}" data-index="{{index}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="5" percent="{{100}}" data-index="{{index}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
       <view class="{{item.answer == '5' ? 'selected':''}}"></view>
     </circular-progress-view>
   </view>
