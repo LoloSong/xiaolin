@@ -4,13 +4,9 @@
 		"ignore": []
 	},
 	"setting": {
-<<<<<<< HEAD
-		"urlCheck": true,
-=======
 		"urlCheck": false,
 		"scopeDataCheck": false,
 		"coverView": true,
->>>>>>> b1989a4e1be1fd214cf3acaa3d10c62f2e5c8362
 		"es6": true,
 		"postcss": true,
 		"compileHotReLoad": false,
@@ -32,19 +28,12 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-<<<<<<< HEAD
-		},
-		"useIsolateContext": true,
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
-=======
 		}
->>>>>>> b1989a4e1be1fd214cf3acaa3d10c62f2e5c8362
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.1",
 	"appid": "wx322f79c0514e6cc6",
-	"projectname": "school",
+	"projectname": "miniprogram-1",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

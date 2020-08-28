@@ -6,13 +6,13 @@
     <button class="btn_land btn_normal f_30" size="default">微信登陆</button>
   </view> -->
   <view class="logo">
-    <image src="https://api.collegein.com/images/logo.png" />
+    <image src="/images/logo.png" />
   </view>
   <view class="bottom_box">
     <view class="iconfont icon-jiantou" bindtap="login"></view>
     <button class="login_btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
     <view class="lace">
-      <image src="https://api.collegein.com/images/lace.png" />
+      <image src="/images/lace.png" />
     </view>
   </view>
 </view>
