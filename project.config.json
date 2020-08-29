@@ -33,7 +33,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.12.1",
 	"appid": "wx322f79c0514e6cc6",
-	"projectname": "school",
+	"projectname": "miniprogram-1",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
