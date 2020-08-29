@@ -12,7 +12,18 @@
     <view class="iconfont icon-jiantou" bindtap="login"></view>
     <button class="login_btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
     <view class="lace">
-      <image src="/images/lace.png" />
+      <view class="lace_wrapper bg_1" >
+        <view class="wava_1 wava" style="background-image: url(/images/lace_1.png)"></view>
+      </view>
+      <view class="lace_wrapper bg_2">
+        <view class="wava_2 wava" style="background-image:url(/images/lace_2.png)"></view>
+      </view>
+      <view class="lace_wrapper bg_3">
+        <view class="wava_3 wava" style="background-image: url(/images/lace_3.png)"></view>
+      </view>
+      <view class="lace_wrapper bg_4">
+        <view class="wava_4 wava" style="background-image: url(/images/lace_4.png)"></view>
+      </view>
     </view>
   </view>
 </view>
