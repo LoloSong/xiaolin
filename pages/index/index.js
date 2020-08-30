@@ -13,7 +13,7 @@ Page({
   },
   onLoad() {
     this.getList()
-    this.getIsInfo()
+    // this.getIsInfo()
   },
   onShow() {
     this.clearSearch()

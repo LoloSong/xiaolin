@@ -49,57 +49,62 @@
       width: 100%;
       height: 100%;
       position: absolute;
-      bottom: -30rpx;
+      bottom: -50rpx;
       .wava{
-        position: absolute;
-        left: 0;
+        // position: absolute;
+        // bottom: 0;
         width: 200%;
         height: 100%;
+        background-size: 100% 100%;
         background-repeat: repeat no-repeat;
-        background-position: 0 bottom;
+        // background-position: 0 bottom;
         transform-origin: center bottom;
       }
     }
     .bg_1{
-      animation: move_wave 8s linear infinite;
-      animation-delay: 1s;
-      .wava{
-        background-size: 50% 100%;
-      }
+      z-index: 1;
+      animation: move_wave 8s linear infinite alternate;
+      animation-duration: 5s;
+      // .wava{
+      //   background-size: 50% 100%;
+      // }
     }
     .bg_2{
       z-index: 10;
-      animation: move_wave 10s linear infinite;
-      .wava{
-        background-size: 50% 100%;
-      }
+      animation: move_wave 10s linear infinite alternate;
+      animation-duration: 6s;
+      // .wava{
+      //   background-size: 50% 100%;
+      // }
     }
     .bg_3{
-      height: 412rpx;
+      // height: 412rpx;
       z-index: 12;
-      animation: move_wave 15s linear infinite;
-      .wava{
-        background-size: 50% 100%;
-      }
+      animation: move_wave 15s linear infinite alternate;
+      animation-duration: 7s;
+      // .wava{
+      //   background-size: 50% 100%;
+      // }
     }
     .bg_4{
-      height: 370rpx;
+      // height: 370rpx;
       z-index: 15;
-      animation: move_wave 20s linear infinite;
-      .wava{
-        background-size: 50% 100%;
-      }
+      animation: move_wave 20s linear infinite alternate;
+      animation-duration: 8s;
+      // .wava{
+      //   background-size: 50% 100%;
+      // }
     }
   }
 }
 @keyframes move_wave {
   0%{
-    transform: translateX(0) translateZ(0) scaleY(1);
+    transform: translateX(0) translateY(0) translateZ(0) scaleY(1);
   }
   50% {
-    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+    transform: translateX(-25%) translateY(50rpx) translateZ(0) scaleY(0.7);
   }
   100%{
-    transform: translateX(-50%) translateZ(0) scaleY(1);
+    transform: translateX(-50%) translateY(0) translateZ(0) scaleY(1);
   }
 }
