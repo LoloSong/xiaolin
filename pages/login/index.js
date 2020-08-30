@@ -52,6 +52,9 @@ Page({
               wx.reLaunch({
                 url: '/pages/index/index',
               })
+            },
+            fail() {
+              app.requestFail()
             }
           })
         } else {
