@@ -2,7 +2,7 @@
 <view class="wrapper">
 	<view class="user_top">
 		<view class="top_img_box">
-			<image src="/images/top.png" />
+			<image src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/top.png" />
 		</view>
 		<view class="top_con">
 			<view class="con_title f_30">{{ name }}</view>
@@ -102,7 +102,7 @@
 				<view class="user_tip_box">
 					<view class="user_tip box_shadow">
             <image wx:if="{{member.avatar}}" src="{{member.avatar}}" mode="aspectFill" />
-            <image wx:else src="/images/no_avatar.png" />
+            <image wx:else src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/no_avatar.png" />
           </view>
 					<view class="message">{{content}}</view>
 					<view class="score">

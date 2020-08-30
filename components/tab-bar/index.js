@@ -10,18 +10,18 @@ Component({
     selectedColor: "#000",
     list: [{
       pagePath: "/pages/index/index",
-      iconPath: "https://api.collegein.com/images/home_icon.png",
-      selectedIconPath: "https://api.collegein.com/images/home_active_icon.png",
+      iconPath: "https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/home_icon.png",
+      selectedIconPath: "https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/home_active_icon.png",
       text: "首页"
     }, {
       pagePath: "/pages/school/index",
-      iconPath: "https://api.collegein.com/images/school_icon.png",
-      selectedIconPath: "https://api.collegein.com/images/school_active_icon.png",
+      iconPath: "https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/school_icon.png",
+      selectedIconPath: "https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/school_active_icon.png",
       text: "学校评分"
     }, {
       pagePath: "/pages/user/index",
-      iconPath: "https://api.collegein.com/images/user_icon.png",
-      selectedIconPath: "https://api.collegein.com/images/user_active_icon.png",
+      iconPath: "https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/user_icon.png",
+      selectedIconPath: "https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/user_active_icon.png",
       text: "个人中心"
     }]
   },

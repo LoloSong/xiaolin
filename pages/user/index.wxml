@@ -1,10 +1,10 @@
 <!--pages/user/index.wxml-->
 <view class="wrapper">
   <view class="user_top">
-    <image src="/images/top.png" />
+    <image src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/top.png" />
     <view class="avatar">
       <image wx:if="{{avatar}}" src="{{avatar}}" />
-      <image wx:else src="/images/no_avatar.png" />
+      <image wx:else src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/no_avatar.png" />
     </view>
   </view>
   <view class="user_info">

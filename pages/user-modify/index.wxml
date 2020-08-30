@@ -5,7 +5,7 @@
       <view class="edit_box" bindtap="uploadAvatar">
         <view class="edit_img">
           <image class="avatar" wx:if="{{avatar}}" src="{{avatar}}"></image>
-          <image class="avatar" wx:else src="https://api.collegein.com/images/head.png" />
+          <image class="avatar" wx:else src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/head.png" />
         </view>
         <view class="edit">点击编辑</view>
       </view>
