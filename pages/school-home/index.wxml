@@ -95,32 +95,7 @@
 
 </view>
 <!-- 学校留言弹窗 -->
-<view class="subject_popup" wx:if="{{isShowDetail}}">
-	<view class="popup_con box_shadow b_r">
-		<view class="user_con">
-			<view class="con">
-				<view class="user_tip_box">
-					<view class="user_tip box_shadow">
-            <image wx:if="{{member.avatar}}" src="{{member.avatar}}" mode="aspectFill" />
-            <image wx:else src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/no_avatar.png" />
-          </view>
-					<view class="message">{{content}}</view>
-					<view class="score">
-						<circular-progress-view class="answer" percent="{{progress}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
-							<view class="score">{{average}}分</view>
-						</circular-progress-view>
-					</view>
-				</view>
-				<block>
-					<block wx:for="{{subjectList}}" wx:key="index">
-						<subject-item isTap="{{false}}" item="{{item}}" index="{{index}}"></subject-item>
-					</block>
-				</block>
-			</view>
-		</view>
-	</view>
-	<view class="mask" bindtap="closeSubjectPopup"></view>
-</view>
+<subject-popup wx:if="{{isShowDetail}}" bind:closeSubjectPopup="closeSubjectPopup" commentId="{{commentId}}"></subject-popup>
 <!-- 申请成为管理员的弹窗 -->
 <view class="message_popup" wx:if="{{isMessage}}" catchtouchmove="true">
 	<view class="message_con b_r box_shadow">

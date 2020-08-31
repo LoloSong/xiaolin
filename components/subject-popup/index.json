@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "subject-item": "/components/subject-list/index"
+  }
+}

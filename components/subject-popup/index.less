@@ -1,0 +1,101 @@
+/* components/subject-popup/index.wxss */
+.subject_popup, .message_popup{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  .popup_con{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80rpx;
+    bottom: calc(140rpx + env(safe-area-inset-bottom));
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 676rpx;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 48rpx;
+    // padding: 58rpx 68rpx;
+    padding: 58rpx 0;
+    margin-top: 54rpx;
+    .con {
+      padding: 0 68rpx;
+    }
+  }
+  .mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+  }
+}
+.user_con{
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  .user_tip_box{
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    margin-bottom: 78rpx;
+    .user_tip{
+      color: #808080;
+      // font-size: 24rpx;
+      width: 74rpx;
+      height: 74rpx;
+      border-radius: 50%;
+      margin-right: 38rpx;
+      image{
+        border-radius: 50%;
+      }
+    }
+    .score{
+      font-size: 22rpx;
+      text-align: center;
+      line-height: 60rpx;
+      color: #808080;
+    }
+    .message{
+      flex: 1;
+      font-size: 18rpx;
+      line-height: 24rpx;
+      margin-right: 50rpx;
+    }
+  }
+  .con{
+    .item{
+      margin-bottom: 34rpx;
+      .subject_title{
+        font-size: 24rpx;
+        color: #666;
+        margin-bottom: 22rpx;
+      }
+      .subject_answer{
+        display: flex;
+        justify-content: center;
+        .answer{
+          margin-left: 30rpx;
+        }
+        .answer:first-child{
+          margin-left: 0rpx;
+        }
+        .selected{
+          width: 30rpx;
+          height: 30rpx;
+          background-color: #6fc2bd;
+          border-radius: 50%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    .item:last-child {
+      margin-bottom: 0rpx;
+    }
+  }
+}

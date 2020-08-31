@@ -2,6 +2,7 @@
   "usingComponents": {
     "tab-bar": "/components/tab-bar/index",
     "circular-progress-view":"/components/circularProgressView/index",
-    "subject-list":"/components/subject-list/index"
+    "subject-list":"/components/subject-list/index",
+    "subject-popup": "/components/subject-popup/index"
   }
 }

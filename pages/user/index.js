@@ -11,7 +11,8 @@ Page({
     firstName: '',
     lastName: '',
     schoolName: '',
-    commentsList: []
+    commentsList: [],
+    isShowDetail: false
   },
 
   /**
@@ -77,6 +78,18 @@ Page({
   goModifyInfo: function () {
     wx.navigateTo({
       url: '/pages/user-modify/index'
+    })
+  },
+  showDetail (e) {
+    const { comment_id } = e.currentTarget.dataset
+    this.setData({
+      commentId: comment_id,
+      isShowDetail: true
+    })
+  },
+  closeSubjectPopup () {
+    this.setData({
+      isShowDetail: false
     })
   },
   /**

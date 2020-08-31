@@ -11,16 +11,13 @@ Page({
     imgList: [],  // 相册列表
     commentsList: [], // 评论列表
     isShowDetail: false, // 详细评分弹窗
-    subjectList: [],
     isMessage: false,
     administratorInfo: {
       intro: '',
       reason: '',
       contact: ''
     },
-    progress:0,
-    content: '',
-    average: '',
+    commentId: ''
   },
   onLoad(options) {
     this.data.schoolId = options.id || ''
@@ -69,33 +66,11 @@ Page({
       })
     })
   },
-  showDetail(e) {
+  showDetail (e) {
     const { comment_id } = e.currentTarget.dataset
-    wx.showLoading({
-      title: '加载中',
-    })
-    app.request({ url: '/wechat/school/comments/detail', data: { comment_id } }).then((res) => {
-      wx.hideLoading()
-      if (res.code !== 200) {
-        wx.showToast({
-          title: res.message,
-          icon: 'none',
-          duration: 2000
-        })
-        return
-      }
-      let subjectList = res.data.score.map((item, index) => {
-        item.answer = item.pivot.score
-        return item
-      })
-      this.setData({
-        subjectList: subjectList,
-        member: res.data.member,
-        average: res.data.average,
-        content: res.data.content,
-        progress: app.frac(res.data.average),
-        isShowDetail: true
-      })
+    this.setData({
+      commentId: comment_id,
+      isShowDetail: true
     })
   },
   closeSubjectPopup () {
