@@ -12,11 +12,11 @@
 	</view>
 	<view class="gray_logo" style="top:{{statusBarHei}}px">
 		<view class="logo">
-			<image src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/logo_gray.png" />
+			<image src="/images/logo_gray.png" />
 		</view>
 	</view>
 	<view class="con_box" style="margin-top:{{274 + statusBarHei}}px">
-		<view class="btn_list f_30">热评榜单</view>
+		<view class="btn_title box_shadow">热评榜单</view>
 		<view class="ranking_box">
 			<view class="ranking_top">
 				<view class="rank_item rank_two">
@@ -24,7 +24,7 @@
 						<image src="" />
 					</view>
 					<view class="icon">
-						<image src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/circle.png" />
+						<image src="/images/circle.png" />
 					</view>
 				</view>
 				<view class="rank_item rank_frist">
@@ -32,7 +32,7 @@
 						<image src="" />
 					</view>
 					<view class="icon">
-						<image src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/circle.png" />
+						<image src="/images/circle.png" />
 					</view>
 				</view>
 				<view class="rank_item rank_three">
@@ -40,12 +40,12 @@
 						<image src="" />
 					</view>
 					<view class="icon">
-						<image src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/circle.png" />
+						<image src="/images/circle.png" />
 					</view>
 				</view>
 			</view>
 			<view class="ranking_img">
-				<image src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/bg_ranking.png" />
+				<image src="/images/bg_ranking.png" />
 			</view>
 		</view>
 		<view class="list_box">

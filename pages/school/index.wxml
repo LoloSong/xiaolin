@@ -16,7 +16,7 @@
 		</swiper>
 	</view>
 	<view class="btn_box">
-		<view class="goBack btn" bindtap="goIndex">返回</view>
+		<!-- <view class="goBack btn" bindtap="goIndex">返回</view> -->
 		<view class="comfirm btn" bindtap="goScore">提交</view>
 	</view>
 </view>

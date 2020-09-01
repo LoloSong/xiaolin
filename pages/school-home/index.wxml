@@ -27,7 +27,7 @@
 	</view>
 	<view class="tab_content">
 		<view class="tab_con_box score_wrapper" wx:if="{{tabIndex == 0}}">
-			<view class="tap f_30">综合分数<text>{{ score }}</text></view>
+			<view class="btn_bg f_30">综合分数<text>{{ score }}</text></view>
 			<view class="con_tab_item box_shadow b_r" wx:for="{{commentsList}}" wx:key="index" data-comment_id="{{item.id}}" bindtap="showDetail">
 				<view class="avatar box_shadow" data-id="{{item.id}}" catch:tap="goHistoryScore">
 					<image src="{{item.member.avatar}}" />

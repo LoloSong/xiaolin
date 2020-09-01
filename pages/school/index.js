@@ -8,8 +8,8 @@ Page({
     searchNameList: [],
     tag: 1,  // 1综合 2生活
     swiper: [
-      { url: 'https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/school_swiper1.png' },
-      { url: 'https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/school_swiper2.png' }
+      { url: '/images/school_swiper1.png' },
+      { url: '/images/school_swiper2.png' }
     ],
   },
   ipuText(e) {

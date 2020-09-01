@@ -69,15 +69,6 @@ page {
   flex-direction: column;
   align-items: center;
 }
-.wrapper .con_box .btn_list {
-  width: 278rpx;
-  height: 80rpx;
-  text-align: center;
-  line-height: 80rpx;
-  color: #858585;
-  background-color: #fff;
-  border-radius: 20rpx;
-}
 .wrapper .con_box .ranking_box {
   width: 444rpx;
   height: 410rpx;

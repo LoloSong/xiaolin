@@ -7,6 +7,12 @@ page {
   flex-direction: column;
   align-items: center;
 }
+.wrapper .btn_title {
+  width: 346rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 146rpx;
+}
 .wrapper .score_list_box {
   width: 676rpx;
   background-color: #fff;

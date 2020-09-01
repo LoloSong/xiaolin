@@ -1,7 +1,7 @@
 <!--pages/score/index.wxml-->
 <view class="status_bar" style="height:{{height}}px"></view>
 <view class="wrapper">
-  <view class="tap f_30 box_shadow">{{ title }}</view>
+  <view class="btn_title f_30 box_shadow">{{ title }}</view>
   <view class="score_list_box b_r">
     <block wx:for="{{subjectList}}" wx:key="index">
       <subject-item item="{{item}}" index="{{index}}" bind:goAnswer="goAnswer"></subject-item>
