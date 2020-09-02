@@ -17,7 +17,7 @@
 	</view>
 	<view class="btn_box">
 		<!-- <view class="goBack btn" bindtap="goIndex">返回</view> -->
-		<view class="comfirm btn" bindtap="goScore">提交</view>
+		<view class="comfirm btn" bindtap="goScore">立刻为母校打分</view>
 	</view>
 </view>
 <view class="popup-slot" wx:if="{{isShowMask}}" bindtap="hideMask">

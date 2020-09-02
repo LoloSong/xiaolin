@@ -6,7 +6,7 @@
     <button class="btn_land btn_normal f_30" size="default">微信登陆</button>
   </view> -->
   <view class="logo">
-    <image src="/images/logo.png" />
+    <image src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/logo.png" />
   </view>
   <view class="bottom_box">
     <view class="iconfont icon-jiantou" bindtap="login"></view>
