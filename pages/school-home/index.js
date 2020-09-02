@@ -17,7 +17,8 @@ Page({
       reason: '',
       contact: ''
     },
-    commentId: ''
+    commentId: '',
+    isShow: false
   },
   onLoad(options) {
     this.data.schoolId = options.id || ''
@@ -80,10 +81,29 @@ Page({
   },
   /** 切换tab */
   changeTab: function (e) {
-    console.log(e)
     this.setData({
       tabIndex: e.currentTarget.dataset.index
     })
+  },
+  doubleClick: function () {
+    this.setData({
+      isShow: true
+    })
+  },
+  linkToTag: function (e) {
+    app.request({ url: '/wechat/school/comments/status', data: { school_id: this.data.schoolId, tag: e.currentTarget.dataset.tag } }).then((res) => {
+      if (res.code !== 200) {
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      }
+      wx.navigateTo({ url: `/pages/score/index?schoolId=${this.data.schoolId}&tag=${e.currentTarget.dataset.tag}` })
+    })
+    // console.log(e.currentTarget.dataset.tag)
+    // wx.navigateTo({ url: `/pages/score/index?schoolId=${this.data.schoolId}&tag=${e.currentTarget.dataset.tag}` })
   },
   /** 答题 */
   goAnswer: function (e) {
