@@ -15,8 +15,8 @@
 		</view>
 	</view>
 	<view class="tab_box">
-		<view class="tab tab_first" data-index="{{0}}" bindtap="changeTab" bindtap="doubleClick">
-			<view class="tab_inner box_shadow {{tabIndex == 0 ? 'active_tab' : ''}}">
+		<view class="tab tab_first" data-index="{{0}}" bindtap="changeTab" >
+			<view class="tab_inner box_shadow {{tabIndex == 0 ? 'active_tab' : ''}}" data-time="{{lastTapTime}}" bindtap="doubleClick">
 				<view class="">双击</view>
 				<view >评分</view>
 			</view>

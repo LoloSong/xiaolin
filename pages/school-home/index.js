@@ -18,7 +18,8 @@ Page({
       contact: ''
     },
     commentId: '',
-    isShow: false
+    isShow: false,
+    lastTapTime: 0
   },
   onLoad(options) {
     this.data.schoolId = options.id || ''
@@ -85,9 +86,19 @@ Page({
       tabIndex: e.currentTarget.dataset.index
     })
   },
-  doubleClick: function () {
+  doubleClick: function (e) {
+    var curTime = e.timeStamp
+    var lastTime = e.currentTarget.dataset.time
+    let _this = this
+    if (curTime - lastTime > 0) {
+      if (curTime - lastTime < 300) {
+        this.setData({
+          isShow: !_this.data.isShow
+        })
+      }
+    }
     this.setData({
-      isShow: true
+      lastTapTime: curTime
     })
   },
   linkToTag: function (e) {
