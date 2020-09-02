@@ -82,25 +82,32 @@ Page({
   },
   /** 切换tab */
   changeTab: function (e) {
-    this.setData({
-      tabIndex: e.currentTarget.dataset.index
-    })
-  },
-  doubleClick: function (e) {
-    var curTime = e.timeStamp
-    var lastTime = e.currentTarget.dataset.time
-    let _this = this
-    if (curTime - lastTime > 0) {
-      if (curTime - lastTime < 300) {
-        this.setData({
-          isShow: !_this.data.isShow
-        })
+    if (e.currentTarget.dataset.index == 0) {
+      var curTime = e.timeStamp
+      var lastTime = e.currentTarget.dataset.time
+      let _this = this
+      if (curTime - lastTime > 0) {
+        if (curTime - lastTime < 300) {
+          this.setData({
+            isShow: !_this.data.isShow
+          })
+        }
       }
+      this.setData({
+        lastTapTime: curTime
+      })
+    } else {
+      this.setData({
+        isShow: false
+      })
     }
     this.setData({
-      lastTapTime: curTime
+      tabIndex: e.currentTarget.dataset.index,
     })
   },
+  // doubleClick: function (e) {
+  //  
+  // },
   linkToTag: function (e) {
     app.request({ url: '/wechat/school/comments/status', data: { school_id: this.data.schoolId, tag: e.currentTarget.dataset.tag } }).then((res) => {
       if (res.code !== 200) {

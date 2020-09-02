@@ -313,8 +313,8 @@ page{
   align-items: center;
   margin-top: 16rpx;
   position: absolute;
-  left: 30rpx;
-  top: 150rpx;
+  left: 0;
+  top: 0;
   .tab_child{
     width: 86rpx;
     height: 86rpx;
@@ -328,8 +328,68 @@ page{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    left: 90rpx;
+    top: 0;
   }
   .tab_child:first-child{
     margin-right: 34rpx;
+  }
+}
+.show_20{
+  animation: show_20 0.3s ease;
+  left: 30rpx!important;
+  top: 150rpx!important;
+  opacity: 1;
+}
+.show_40{
+  animation: show_40 0.3s ease;
+  top: 150rpx!important;
+  left: 140rpx!important;
+  opacity: 1;
+}
+.hide_20{
+  animation: hide_20 0.3s ease;
+  top: 0rpx!important;
+  left: 90rpx!important;
+  opacity: 0;
+}
+@keyframes show_20 {
+  from {
+    top: 0;
+    left: 90rpx;
+    opacity: 0;
+  }
+
+  to {
+    top: 150rpx;
+    left: 30rpx;
+    opacity: 1;
+  }
+}
+@keyframes show_40 {
+  from {
+    top: 0;
+    left: 90rpx;
+    opacity: 0;
+  }
+
+  to {
+    top: 150rpx;
+    left: 140rpx;
+    opacity: 1;
+  }
+}
+@keyframes hide_20 {
+  from {
+    top: 150rpx;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    top: 0rpx;
+    left: 90rpx;
+    transform: rotate(0deg);
+    opacity: 0;
   }
 }

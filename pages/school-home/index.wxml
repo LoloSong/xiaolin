@@ -15,17 +15,17 @@
 		</view>
 	</view>
 	<view class="tab_box">
-		<view class="tab tab_first" data-index="{{0}}" bindtap="changeTab" >
-			<view class="tab_inner box_shadow {{tabIndex == 0 ? 'active_tab' : ''}}" data-time="{{lastTapTime}}" bindtap="doubleClick">
+		<view class="tab tab_first" data-index="{{0}}" bindtap="changeTab" data-time="{{lastTapTime}}">
+			<view class="tab_inner box_shadow {{tabIndex == 0 ? 'active_tab' : ''}}" >
 				<view class="">双击</view>
 				<view >评分</view>
 			</view>
-			<view class="tab_children_box" wx:if="{{isShow}}">
-				<view class="tab_child" data-tag="{{1}}" bindtap="linkToTag">
+			<view class="tab_children_box " wx:if="{{isShow}}">
+				<view class="tab_child {{isShow ? 'show_20': 'hide_20'}}" data-tag="{{1}}" bindtap="linkToTag">
 					<view >综合</view>
 					<view >评分</view>
 				</view>
-				<view class="tab_child" data-tag="{{2}}" bindtap="linkToTag">
+				<view class="tab_child {{isShow ? 'show_40': 'hide_20'}}" data-tag="{{2}}" bindtap="linkToTag">
 					<view >生活</view>
 					<view >评分</view>
 				</view>

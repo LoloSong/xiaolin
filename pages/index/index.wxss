@@ -59,7 +59,7 @@ page {
   border-radius: 0rpx 0rpx 48rpx 48rpx;
 }
 .wrapper .gray_logo .logo {
-  width: 310rpx;
+  width: 280rpx;
   height: 148rpx;
   margin: 226rpx auto;
 }

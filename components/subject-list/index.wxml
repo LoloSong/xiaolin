@@ -2,19 +2,19 @@
 <view class="item">
   <view class="subject_title">{{index + 1}}、{{item.name}}</view>
   <view class="subject_answer">
-    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="1" data-index="{{index}}" percent_to="{{20}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="1" data-index="{{index}}" percent="{{20}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
       <view class="{{item.answer == '1' ? 'selected':''}}"></view>
     </circular-progress-view>
-    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="2" percent_to="{{40}}" data-index="{{index}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="2" percent="{{40}}" data-index="{{index}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
       <view class="{{item.answer == '2' ? 'selected':''}}"></view>
     </circular-progress-view>
-    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="3" percent_to="{{60}}" data-index="{{index}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="3" percent="{{60}}" data-index="{{index}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
       <view class="{{item.answer == '3' ? 'selected':''}}"></view>
     </circular-progress-view>
-    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="4" percent_to="{{80}}" data-index="{{index}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="4" percent="{{80}}" data-index="{{index}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
       <view class="{{item.answer == '4' ? 'selected':''}}"></view>
     </circular-progress-view>
-    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="5" percent_to="{{100}}" data-index="{{index}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+    <circular-progress-view class="answer" bindtap="goAnswer" data-answer="5" percent="{{100}}" data-index="{{index}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
       <view class="{{item.answer == '5' ? 'selected':''}}"></view>
     </circular-progress-view>
   </view>

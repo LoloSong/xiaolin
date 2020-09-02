@@ -12,7 +12,7 @@
 	</view>
 	<view class="gray_logo" style="top:{{statusBarHei}}px">
 		<view class="logo">
-			<image src="/images/logo_gray.png" />
+			<image mode="aspectFit" src="/images/logo_gray.png" />
 		</view>
 	</view>
 	<view class="con_box" style="margin-top:{{274 + statusBarHei}}px">
