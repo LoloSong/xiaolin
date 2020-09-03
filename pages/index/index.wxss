@@ -60,7 +60,7 @@ page {
 }
 .wrapper .gray_logo .logo {
   width: 280rpx;
-  height: 148rpx;
+  height: 133rpx;
   margin: 226rpx auto;
 }
 .wrapper .con_box {
