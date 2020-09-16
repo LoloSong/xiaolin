@@ -13,24 +13,44 @@
     justify-content: center;
     overflow: hidden;
     margin-bottom: 34rpx;
-    .answer{
-      margin-left: 30rpx;
-    }
-    .answer:first-child{
-      margin-left: 0rpx;
-    }
-    .selected{
-      width: 30rpx;
-      height: 30rpx;
-      background-color: #6fc2bd;
-      border-radius: 50%;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
+    // .answer{
+    //   margin-left: 30rpx;
+    // }
+    // .answer:first-child{
+    //   margin-left: 0rpx;
+    // }
+    
   }
 }
 .item:last-child {
   margin-bottom: 0rpx;
+}
+.subject_item{
+  position: relative;
+  width: 54rpx;
+  height: 54rpx;
+  margin-left: 30rpx;
+  image{
+    width: 54rpx;
+    height: 54rpx;
+  }
+  .selected{
+    width: 30rpx;
+    height: 30rpx;
+    background-color: #6fc2bd;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    z-index: 100;
+  }
+}
+.subject_item:first-child{
+  margin-left: 0rpx;
 }
