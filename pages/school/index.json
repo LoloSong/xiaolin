@@ -2,6 +2,7 @@
   "navigationStyle": "default",
   "navigationBarTitleText": "",
   "navigationBarBackgroundColor": "#74c3c1",
+  "backgroundColor": "#74c3c1",
   "usingComponents": {
     "tar-bar": "/components/tab-bar/index"
   }
