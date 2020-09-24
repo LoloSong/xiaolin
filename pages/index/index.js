@@ -6,6 +6,9 @@ const util = require('../../utils/util')
 Page({
   data: {
     list: [],
+    no1logo: '',
+    no2logo: '',
+    no3logo: '',
     statusBarHei: app.globalData.statusBar,
     searchId: '',
     searchName: '',
@@ -35,6 +38,21 @@ Page({
       this.setData({
         list: res.data
       })
+      if (this.data.list[0]) {
+        this.setData({
+          no1logo: this.data.list[0].logo
+        })
+      }
+      if (this.data.list[1]) {
+        this.setData({
+          no2logo: this.data.list[1].logo
+        })
+      }
+      if (this.data.list[2]) {
+        this.setData({
+          no3logo: this.data.list[2].logo
+        })
+      }
     })
   },
   getIsInfo() {
