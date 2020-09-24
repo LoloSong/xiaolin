@@ -1,14 +1,16 @@
 <!--pages/school/index.wxml-->
 <view class="wrapper">
 	<view class="search_wrapper">
-		<view class="search_title">请输入您要评分点学校</view>
+		<image class="tips_1" src="../../images/title_tips_1.png"></image>
+		<!-- <view class="search_title">请输入您要评分点学校</view> -->
 		<view class="search_box">
 			<view class="ipu_box"><input type="text" value="{{searchName}}" placeholder="请输入您要评分点学校，例如：清华大学或Tsinghua" placeholder-class="search_placeholder" bindinput="ipuText" bindfocus="inputFocus" bindblur="inputBulr"/></view>
 			<view class="iconfont icon-icon161603"></view>
 		</view>
 	</view>
 	<view class="swiper_box">
-		<view class="search_title">请选择您要评分点内容</view>
+		<image class="tips_2" src="../../images/title_tips_2.png"></image>
+		<!-- <view class="search_title">请选择您要评分点内容</view> -->
 		<swiper indicator-dots="{{true}}" indicator-active-color="#fff" bindchange="changeSwiper">
 			<block wx:for="{{swiper}}" wx:key="*this">
 				<swiper-item class="item">
