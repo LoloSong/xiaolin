@@ -67,31 +67,31 @@
 			<!-- <view class="tap f_30 box_shadow modify_btn" bindtap="applyAdministrator">申请成为校园管理员</view> -->
 		</view>
 		<view class="tab_con_box pic_box b_r" wx:if="{{tabIndex == 1}}">
-			<view class="pic">
+			<view class="pic" data-url="{{imgList[0]}}" bindtap="previewImage">
 				<image wx:if="{{imgList[0]}}" src="{{imgList[0].image}}" />
 			</view>
-			<view class="pic">
+			<view class="pic" data-url="{{imgList[1]}}" bindtap="previewImage">
 				<image wx:if="{{imgList[1]}}" src="{{imgList[1].image}}" />
 			</view>
-			<view class="pic">
+			<view class="pic" data-url="{{imgList[2]}}" bindtap="previewImage">
 				<image wx:if="{{imgList[2]}}" src="{{imgList[2].image}}" />
 			</view>
-			<view class="pic">
+			<view class="pic" data-url="{{imgList[3]}}" bindtap="previewImage">
 				<image wx:if="{{imgList[3]}}" src="{{imgList[3].image}}" />
 			</view>
-			<view class="pic">
+			<view class="pic" data-url="{{imgList[4]}}" bindtap="previewImage">
 				<image wx:if="{{imgList[4]}}" src="{{imgList[4].image}}" />
 			</view>
-			<view class="pic">
+			<view class="pic" data-url="{{imgList[5]}}" bindtap="previewImage">
 				<image wx:if="{{imgList[5]}}" src="{{imgList[5].image}}" />
 			</view>
-			<view class="pic">
+			<view class="pic" data-url="{{imgList[6]}}" bindtap="previewImage">
 				<image wx:if="{{imgList[6]}}" src="{{imgList[6].image}}" />
 			</view>
-			<view class="pic">
+			<view class="pic" data-url="{{imgList[7]}}" bindtap="previewImage">
 				<image wx:if="{{imgList[7]}}" src="{{imgList[7].image}}" />
 			</view>
-			<view class="pic">
+			<view class="pic" data-url="{{imgList[8]}}" bindtap="previewImage">
 				<image wx:if="{{imgList[8]}}" src="{{imgList[8].image}}" />
 			</view>
 			<!-- <view class="pic">

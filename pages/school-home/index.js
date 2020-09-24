@@ -160,6 +160,19 @@ Page({
       }
     })
   },
+  /** 预览图片 */
+  previewImage (e) {
+    let current = e.currentTarget.dataset.url.image;
+    let urls = this.data.imgList.reduce((prev, cur) => {
+      prev.push(cur.image)
+      return prev
+    }, [])
+    console.log(urls)
+    wx.previewImage({
+      current: current, // 当前显示图片的http链接  
+      urls: urls // 需要预览的图片http链接列表  
+    })
+  },
   /** 历史评分 */
   goHistoryScore (e) {
     wx.navigateTo({
