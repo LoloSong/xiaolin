@@ -7,9 +7,9 @@
 		<view class="top_con">
 			<view class="con_title f_30">{{ name }}</view>
 			<view class="avatar_box">
-				<image class="school_logo" src="{{ logo }}" />
+				<image class="school_logo" src="{{ logo }}"/>
 				<view class="icon_avatar">
-					<image src="" />
+					<image src="{{countryImage}}" />
 				</view>
 			</view>
 		</view>

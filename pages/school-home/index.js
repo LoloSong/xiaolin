@@ -5,6 +5,7 @@ Page({
     tabIndex: 0,
     schoolId: '',
     name: '', // 学校姓名
+    countryImage: '', // 国旗logo
     logo: '', // 学校logo
     score: 0, // 综合评分
     desc: '', // 学校简介
@@ -41,7 +42,8 @@ Page({
         logo: res.data.logo,
         score: res.data.score,
         desc: res.data.desc,
-        imgList: res.data.photos
+        imgList: res.data.photos,
+        countryImage: res.data.country_image
       })
     })
   },
