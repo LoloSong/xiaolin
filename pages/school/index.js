@@ -30,7 +30,7 @@ Page({
     })
   },
   inputBulr() {
-    // this.hideMask()
+    this.hideMask()
   },
   hideMask() {
     this.setData({
