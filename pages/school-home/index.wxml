@@ -42,8 +42,9 @@
 		<view class="tab_con_box score_wrapper" wx:if="{{tabIndex == 0}}">
 			<view class="btn_bg f_30">综合分数<text>{{ score }}</text></view>
 			<view class="con_tab_item box_shadow b_r" wx:for="{{commentsList}}" wx:key="index" data-comment_id="{{item.id}}" bindtap="showDetail">
-				<view class="avatar box_shadow" data-id="{{item.id}}" catch:tap="goHistoryScore">
-					<image src="{{item.member.avatar}}" />
+				<view class="avatar box_shadow" data-id="{{item.member_id}}" data-anonymous="{{item.type}}" catch:tap="goHistoryScore">
+					<view class="anonymous" wx:if="{{item.type === 1}}">匿</view>
+					<image src="{{item.member.avatar}}" wx:else/>
 				</view>
         <block catch:tap="getSubjectDetail" data-id="{{item.id}}">
           <view class="message">{{item.content}}</view>
@@ -53,14 +54,14 @@
                 <view class="score_text">{{item.average}}</view>
               </circular-progress-view>
             </view>
-            <view class="score_btn_box">
+            <!-- <view class="score_btn_box">
               <view class="btn btn_weixin">
                 <image src="/images/weixin.png" />
               </view>
               <view class="btn btn_thumbs">
                 <image src="/images/heart.png" />
               </view>
-            </view>
+            </view> -->
           </view>
         </block>
 			</view>

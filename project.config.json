@@ -86,10 +86,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "学校首页",
 					"pathName": "pages/school-home/index",
-					"query": "id=1",
+					"query": "id=225",
 					"scene": null
 				},
 				{
@@ -118,6 +118,13 @@
 					"name": "历史评分",
 					"pathName": "pages/school-home/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "历史学分",
+					"pathName": "pages/history-score/index",
+					"query": "id=5",
 					"scene": null
 				}
 			]

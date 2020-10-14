@@ -8,7 +8,7 @@
     </view>
   </view>
   <view class="user_info">
-    <view class="user_name">{{firstName}}{{lastName}}</view>
+    <view class="user_name">{{nickname}}</view>
     <view class="user_tip">{{schoolName}}校友</view>
   </view>
   <view class="tap f_30 box_shadow">历史学分</view>

@@ -8,8 +8,7 @@ Page({
   data: {
     memberId: '',
     avatar: '',
-    firstName: '',
-    lastName: '',
+    nickname: '',
     schoolName: '',
     commentsList: []
   },
@@ -18,6 +17,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.setData({
+      memberId: options.id
+    })
     this.getUserInfo()
     // this.getCommentsList()
   },
@@ -26,7 +28,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    app.request({ url: '/wechat/member/info/self' }).then((res) => {
+    app.request({ url: '/wechat/member/info', data: { member_id: this.data.memberId } }).then((res) => {
       wx.hideLoading()
       if (res.code !== 200) {
         wx.showToast({
@@ -36,12 +38,16 @@ Page({
         })
         return
       }
+      let schoolName
+      if (res.data.school.length > 0) {
+        schoolName = res.data.school[res.data.school.length - 1].name
+      } else {
+        schoolName = []
+      }
       this.setData({
-        memberId: res.data.id,
         avatar: res.data.avatar,
-        firstName: res.data.first_name,
-        lastName: res.data.last_name,
-        schoolName: res.data.school[res.data.school.length - 1].name,
+        nickname: res.data.nickname,
+        schoolName: schoolName,
       })
       this.getCommentsList()
     })

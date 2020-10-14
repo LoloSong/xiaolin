@@ -40,7 +40,7 @@ Page({
       this.setData({
         name: res.data.name,
         logo: res.data.logo,
-        score: res.data.score,
+        score: (res.data.score / res.data.comment_num).toFixed(1),
         desc: res.data.desc,
         imgList: res.data.photos,
         countryImage: res.data.country_image
@@ -175,6 +175,11 @@ Page({
   },
   /** 历史评分 */
   goHistoryScore (e) {
+    const { anonymous } = e.currentTarget.dataset
+    // 匿名用户不跳转
+    if (anonymous === 1) {
+      return
+    }
     wx.navigateTo({
       url: `/pages/history-score/index?id=${e.currentTarget.dataset.id}`
     })
