@@ -37,10 +37,15 @@ Page({
         })
         return
       }
+      let score = 0
+      // console.log(res.data.comment_num)
+      if (res.data.comment_num > 0) {
+        score = (res.data.score / res.data.comment_num).toFixed(1)
+      }
       this.setData({
         name: res.data.name,
         logo: res.data.logo,
-        score: (res.data.score / res.data.comment_num).toFixed(1),
+        score: score,
         desc: res.data.desc,
         imgList: res.data.photos,
         countryImage: res.data.country_image
