@@ -21,7 +21,7 @@
 			<view class="ranking_top">
 				<view class="rank_item rank_two">
 					<view class="avatar">
-						<image src="{{no1logo}}" />
+						<image src="{{no2logo}}" />
 					</view>
 					<view class="icon">
 						<image src="/images/circle.png" />
@@ -29,7 +29,7 @@
 				</view>
 				<view class="rank_item rank_frist">
 					<view class="avatar">
-						<image src="{{no2logo}}" />
+						<image src="{{no1logo}}" />
 					</view>
 					<view class="icon">
 						<image src="/images/circle.png" />
