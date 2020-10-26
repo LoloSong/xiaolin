@@ -120,3 +120,41 @@ page {
   justify-content: space-between;
   background: #fff;
 }
+.error-popup{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+.error-popup .mask{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.error-popup .error-con{
+  width: 560rpx;
+  padding: 60rpx;
+  height: 250rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  position: absolute;
+  z-index: 200;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 24rpx;
+  color: #686868;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.error-popup .error-con .error-line{
+  margin-top: 20rpx;
+}

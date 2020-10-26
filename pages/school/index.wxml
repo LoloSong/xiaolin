@@ -37,4 +37,13 @@
 		</view>
 	</view>
 </view>
+
+<view class="error-popup" wx:if="{{isError}}">
+	<view class="mask" bindtap="closeErrorPopup"></view>
+	<view class="error-con">
+		<view>请注意:</view>
+		<view class="error-line">请微信登录后，进行评分哦！</view>
+	</view>
+</view>
+
 <tar-bar selected="{{1}}"/>

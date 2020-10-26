@@ -5,6 +5,7 @@ Page({
     isShowMask: false,
     searchId: '',
     searchName: '',
+    isError: false,
     searchNameList: [],
     tag: 1,  // 1综合 2生活
     swiper: [
@@ -68,14 +69,11 @@ Page({
     if (current === 1) {
       this.data.tag = 1
     }
-    console.log(this.data.tag)
   },
   goScore() {
     if (!app.globalData.isLogin) {
-      wx.showToast({
-        title: '请微信登录后，进行评分哦！',
-        icon: 'none',
-        duration: 2000
+      this.setData({
+        isError: true
       })
       return
     }
@@ -99,6 +97,11 @@ Page({
         return
       }
       wx.navigateTo({ url: `/pages/score/index?schoolId=${this.data.searchId}&tag=${this.data.tag}` })
+    })
+  },
+  closeErrorPopup () {
+    this.setData({
+      isError: false
     })
   },
   goIndex() {

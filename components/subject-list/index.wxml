@@ -22,6 +22,7 @@
       <image src="/images/a_5.png" mode="aspectFill"/>
       <view class="{{item.answer == '5' ? 'selected':''}} answer"></view>
     </view>
+    <view class="score" wx:if="{{item.answer}}">{{item.answer}}</view>
     <!-- <circular-progress-view class="answer" bindtap="goAnswer" data-answer="1" data-index="{{index}}" percent="{{20}}" progressSize="{{54}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
       <view class="{{item.answer == '1' ? 'selected':''}}"></view>
     </circular-progress-view>
