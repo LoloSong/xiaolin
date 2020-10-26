@@ -140,14 +140,14 @@ page {
   margin-bottom: 38rpx;
   padding: 0rpx 30rpx;
   color: #808080;
-  font-size: 20rpx;
+  font-size: 22rpx;
 }
 .wrapper .con_box .list_box .list_item:nth-child(1) {
-  font-size: 32rpx;
+  font-size: 34rpx;
 }
 .wrapper .con_box .list_box .list_item:nth-child(2) {
-  font-size: 28rpx;
+  font-size: 30rpx;
 }
 .wrapper .con_box .list_box .list_item:nth-child(3) {
-  font-size: 24rpx;
+  font-size: 26rpx;
 }
