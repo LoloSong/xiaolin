@@ -30,6 +30,7 @@
       </view>
     </view>
     <view class="btn_title f_30 box_shadow modify_btn" bindtap="goModifyInfo">点击修改个人信息</view>
+    <view class="btn_title f_30 box_shadow modify_btn" bindtap="logout">退出登录</view>
   </block>
 </view>
 <!-- 学校留言弹窗 -->

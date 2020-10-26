@@ -89,6 +89,13 @@ Page({
       }
     })
   },
+  logout() {
+    wx.removeStorageSync('token')
+    wx.removeStorageSync('openid')
+    wx.reLaunch({
+      url: '/pages/user/index',
+    })
+  },
   getUserInfo() {
     wx.showLoading({
       title: '加载中',

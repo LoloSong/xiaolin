@@ -46,6 +46,9 @@ App({
           if (res.data.code === 401) {
             wx.removeStorageSync('token')
             wx.removeStorageSync('openid')
+            wx.reLaunch({
+              url: '/pages/index/index',
+            })
           }
           resolve(res.data)
         },

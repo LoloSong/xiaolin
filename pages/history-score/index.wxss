@@ -11,6 +11,7 @@ page {
   text-align: center;
   position: relative;
   margin-top: 38rpx;
+  margin-bottom: 30rpx;
 }
 .wrapper .user_info .user_name {
   font-size: 40rpx;
@@ -20,6 +21,15 @@ page {
   font-size: 32rpx;
   line-height: 40rpx;
   color: #999;
+}
+.wrapper .history {
+  width: 348rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  color: #858585;
 }
 .user_top {
   width: 750rpx;

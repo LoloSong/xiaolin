@@ -58,7 +58,7 @@ page {
   width: 334rpx;
   height: 70rpx;
   line-height: 70rpx;
-  margin-bottom: calc(170rpx + env(safe-area-inset-bottom));
+  margin-bottom: 30rpx;
   margin-top: 20rpx;
 }
 .comment_box {

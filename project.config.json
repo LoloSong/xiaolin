@@ -41,17 +41,10 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
     "plugin": {
       "list": []
     },
     "game": {
-      "currentL": -1,
       "list": []
     },
     "gamePlugin": {
@@ -95,10 +88,9 @@
           "scene": null
         },
         {
-          "id": 5,
           "name": "学校评分",
           "pathName": "pages/score/index",
-          "query": "schoolId=3&tag=1",
+          "query": "schoolId=68&tag=1",
           "scene": null
         },
         {
