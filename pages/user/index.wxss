@@ -62,8 +62,11 @@ page {
   margin-top: 20rpx;
 }
 .comment_box {
+  overflow: auto;
   width: 686rpx;
-  margin-top: 70rpx;
+  max-height: 500rpx;
+  margin-top: 60rpx;
+  margin-bottom: 20rpx;
 }
 .comment_box .comment_item {
   background-color: #fff;
