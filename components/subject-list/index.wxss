@@ -9,7 +9,9 @@
 }
 .item .subject_answer {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  margin-left: 40rpx;
+  align-items: center;
   overflow: hidden;
   margin-bottom: 34rpx;
 }
@@ -41,4 +43,8 @@
 }
 .subject_item:first-child {
   margin-left: 0rpx;
+}
+.score{
+  margin-left: 30px;
+  color: #666;
 }
