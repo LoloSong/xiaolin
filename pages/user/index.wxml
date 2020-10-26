@@ -20,7 +20,7 @@
     <view class="btn_title f_30 box_shadow">评分记录</view>
     <view class="comment_box">
       <view class="comment_item box_shadow b_r f-30" wx:for="{{commentsList}}" wx:key="this" bindtap="showDetail" data-comment_id="{{item.id}}">
-        <view class="school-name">{{item.school.name}}大学</view>
+        <view class="school-name">{{item.school.name}}</view>
         <view class="comment">{{item.content}}</view>
         <view class="score">
           <circular-progress-view class="answer" percent="{{item.progress}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>

@@ -16,7 +16,7 @@ Page({
     commentsList: [],
     isShowDetail: false
   },
-  onLoad() {
+  onShow() {
     // 判断是否登录
     app.checkLogin()
     this.setData({
