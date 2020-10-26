@@ -135,7 +135,7 @@ page {
   top: 0;
   bottom: 0;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .error-popup .error-con{
   width: 560rpx;

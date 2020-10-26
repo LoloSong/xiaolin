@@ -103,7 +103,7 @@
 		</view>
 		<view class="tab_con_box message_box b_r box_shadow" wx:if="{{tabIndex == 2}}">
 			<textarea value="{{desc}}" maxlength="120" disabled></textarea>
-			<view class="max_length">请输入80-120字</view>
+			<!-- <view class="max_length">请输入80-120字</view> -->
 		</view>
 	</view>
 
