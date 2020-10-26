@@ -6,9 +6,6 @@ const util = require('../../utils/util')
 Page({
   data: {
     list: [],
-    no1logo: '',
-    no2logo: '',
-    no3logo: '',
     statusBarHei: app.globalData.statusBar,
     searchId: '',
     searchName: '',
@@ -38,21 +35,6 @@ Page({
       this.setData({
         list: res.data
       })
-      if (this.data.list[0]) {
-        this.setData({
-          no1logo: this.data.list[0].logo
-        })
-      }
-      if (this.data.list[1]) {
-        this.setData({
-          no2logo: this.data.list[1].logo
-        })
-      }
-      if (this.data.list[2]) {
-        this.setData({
-          no3logo: this.data.list[2].logo
-        })
-      }
     })
   },
   getIsInfo() {
@@ -100,6 +82,14 @@ Page({
     })
   },
   goSchoolHome(e) {
+    if (!app.globalData.isLogin) {
+      wx.showToast({
+        title: '请先登录后查看热评',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
     const schoolId = e.target.dataset.school_id
     wx.navigateTo({ url: `/pages/school-home/index?id=${schoolId}` })
   },

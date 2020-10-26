@@ -1,6 +1,7 @@
 //app.js
 App({
   globalData: {
+    isLogin: false,
     baseUrl: 'https://api.collegein.com',
     userInfo: null,
     custom: 0,
@@ -19,15 +20,20 @@ App({
       self.globalData.customBar = (custom.top - systemInfo.statusBarHeight) * 2 + custom.height;//标题栏的高度
     }
   },
+  onShow() {
+    this.checkLogin()
+  },
+  checkLogin() {
+    // 判断是否登录
+    if (wx.getStorageSync('token')) {
+      this.globalData.isLogin = true
+    } else {
+      this.globalData.isLogin = false
+    }
+  },
   request({method = 'GET', url, data}) {
     const _this = this
     const token = wx.getStorageSync('token')
-    if (!token) {
-      wx.reLaunch({
-        url: '/pages/login/index',
-      })
-      return
-    }
     return new Promise((resolve) => {
       wx.request({
         url: `${_this.globalData.baseUrl}${url}`,
@@ -37,6 +43,10 @@ App({
           'Authorization': token
         },
         success(res) {
+          if (res.data.code === 401) {
+            wx.removeStorageSync('token')
+            wx.removeStorageSync('openid')
+          }
           resolve(res.data)
         },
         fail() {

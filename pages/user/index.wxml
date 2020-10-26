@@ -1,4 +1,4 @@
-<!--pages/user/index.wxml-->
+<!-- pages/user/index.wxml -->
 <view class="wrapper">
   <view class="user_top">
     <image src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/top.png" />
@@ -7,23 +7,30 @@
       <image wx:else src="https://collegein.oss-cn-shanghai.aliyuncs.com/xcx/no_avatar.png" />
     </view>
   </view>
-  <view class="user_info">
-    <view class="user_name">{{firstName}}{{lastName}}</view>
-    <view class="user_tip">{{schoolName}}校友</view>
-  </view>
-  <view class="btn_title f_30 box_shadow">评分记录</view>
-  <view class="comment_box">
-    <view class="comment_item box_shadow b_r f-30" wx:for="{{commentsList}}" wx:key="this" bindtap="showDetail" data-comment_id="{{item.id}}">
+  <block wx:if="{{!isLogin}}">
+    <button class="btn_login" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+    </button>
+  </block>
+  <block wx:else>
+    <view class="user_info">
+      <view class="user_name">{{firstName}}{{lastName}}</view>
+      <view class="user_tip">{{schoolName}}校友</view>
+    </view>
+    <view class="btn_title f_30 box_shadow">评分记录</view>
+    <view class="comment_box">
+      <view class="comment_item box_shadow b_r f-30" wx:for="{{commentsList}}" wx:key="this" bindtap="showDetail" data-comment_id="{{item.id}}">
         <view class="school-name">{{item.school.name}}大学</view>
         <view class="comment">{{item.content}}</view>
         <view class="score">
-            <circular-progress-view class="answer" percent="{{item.progress}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
-                <view class="score_text">{{item.average}}</view>
-            </circular-progress-view>
+          <circular-progress-view class="answer" percent="{{item.progress}}" progressSize="{{80}}" progressBg='#cfdee6' loopBg="#6fc3bd" content>
+            <view class="score_text">{{item.average}}</view>
+          </circular-progress-view>
         </view>
+      </view>
     </view>
-  </view>
-  <view class="btn_title f_30 box_shadow modify_btn" bindtap="goModifyInfo">点击修改个人信息</view>
+    <view class="btn_title f_30 box_shadow modify_btn" bindtap="goModifyInfo">点击修改个人信息</view>
+  </block>
 </view>
 <!-- 学校留言弹窗 -->
 <subject-popup wx:if="{{isShowDetail}}" bind:closeSubjectPopup="closeSubjectPopup" commentId="{{commentId}}"></subject-popup>

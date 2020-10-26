@@ -6,25 +6,89 @@ Page({
    * 页面的初始数据
    */
   data: {
-    memberId: '',
+    isLogin: false,
     avatar: '',
+    nickname: '',
+    memberId: '',
     firstName: '',
     lastName: '',
     schoolName: '',
     commentsList: [],
     isShowDetail: false
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-    // this.getCommentsList()
+  onLoad() {
+    // 判断是否登录
+    app.checkLogin()
+    this.setData({
+      isLogin: app.globalData.isLogin
+    })
+    if (this.data.isLogin) {
+      this.getUserInfo()
+    }
   },
-  onShow: function () {
-    this.getUserInfo()
+  bindGetUserInfo(e) {
+    if (e.detail.userInfo) {
+      this.data.avatar = e.detail.userInfo.avatarUrl
+      this.data.nickname = e.detail.userInfo.nickName
+      this.login()
+    } else {
+      wx.showToast({
+        title: '请先完成微信授权',
+        icon: 'none',
+        duration: 2000
+      })
+    }
   },
-  /** 获取个人信息 */
+  login() {
+    let _this = this
+    wx.showLoading({
+      title: `登录中`,
+      mask: true
+    })
+    wx.login({
+      success(res) {
+        if (res.code) {
+          wx.request({
+            url: `${app.globalData.baseUrl}/wechat/member/login`,
+            method: 'POST',
+            data: {
+              js_code: res.code,
+              avatar: _this.data.avatar,
+              nickname: _this.data.nickname
+            },
+            success(res) {
+              wx.hideLoading()
+              if (res.data.code !== 200) {
+                wx.showToast({
+                  title: res.data.message,
+                  icon: 'none',
+                  duration: 2000
+                })
+                return
+              }
+              wx.setStorageSync('token', res.data.data.token)
+              wx.setStorageSync('openid', res.data.data.openid)
+              wx.reLaunch({
+                url: '/pages/user/index',
+              })
+            },
+            fail() {
+              app.requestFail()
+            }
+          })
+        } else {
+          wx.showToast({
+            title: `登录失败${res.errMsg}`,
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      },
+      fail() {
+        app.requestFail()
+      }
+    })
+  },
   getUserInfo() {
     wx.showLoading({
       title: '加载中',

@@ -59,9 +59,9 @@ page {
   border-radius: 0rpx 0rpx 48rpx 48rpx;
 }
 .wrapper .gray_logo .logo {
-  width: 280rpx;
-  height: 133rpx;
-  margin: 226rpx auto;
+  width: 223rpx;
+  height: 84rpx;
+  margin: 270rpx auto;
 }
 .wrapper .con_box {
   margin-top: 548rpx;
@@ -140,4 +140,14 @@ page {
   margin-bottom: 38rpx;
   padding: 0rpx 30rpx;
   color: #808080;
+  font-size: 20rpx;
+}
+.wrapper .con_box .list_box .list_item:nth-child(1) {
+  font-size: 32rpx;
+}
+.wrapper .con_box .list_box .list_item:nth-child(2) {
+  font-size: 28rpx;
+}
+.wrapper .con_box .list_box .list_item:nth-child(3) {
+  font-size: 24rpx;
 }

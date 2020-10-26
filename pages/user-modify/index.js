@@ -30,7 +30,6 @@ Page({
   },
   getOssConfig() {
     app.request({ url: '/wechat/member/avatar/upload' }).then((res) => {
-      console.log(res)
       if (res.code === 200) {
         this.data.ossConfig = res.data
       }
@@ -50,6 +49,14 @@ Page({
         })
         return
       }
+      this.setData({
+        avatar: res.data.avatar,
+        firstName: res.data.first_name,
+        lastName: res.data.last_name,
+        sex: res.data.sex,
+        sexText: res.data.sex === 1 ? '男' : res.data.sex === 2 ? '女' : '',
+        birthday: res.data.birthday,
+      })
       if (res.data.school.length <= 0) {
         return
       }
@@ -61,12 +68,6 @@ Page({
         return item
       })
       this.setData({
-        avatar: res.data.avatar,
-        firstName: res.data.first_name,
-        lastName: res.data.last_name,
-        sex: res.data.sex,
-        sexText: res.data.sex === 1 ? '男' : res.data.sex === 2 ? '女' : '',
-        birthday: res.data.birthday,
         schoolInfoList: schoolInfoList
       })
     })

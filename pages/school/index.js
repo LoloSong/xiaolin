@@ -71,6 +71,14 @@ Page({
     console.log(this.data.tag)
   },
   goScore() {
+    if (!app.globalData.isLogin) {
+      wx.showToast({
+        title: '请微信登录后，进行评分哦！',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    }
     if (!this.data.searchId) {
       // 没有找到对应但id
       wx.showToast({
