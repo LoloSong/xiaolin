@@ -4,7 +4,7 @@
 		<image class="tips_1" src="../../images/title_tips_1.png"></image>
 		<!-- <view class="search_title">请输入您要评分点学校</view> -->
 		<view class="search_box">
-			<view class="ipu_box"><input type="text" value="{{searchName}}" placeholder="请输入您要评分点学校，例如：清华大学或Tsinghua" placeholder-class="search_placeholder" bindinput="ipuText" bindfocus="inputFocus" bindblur="inputBulr"/></view>
+			<view class="ipu_box"><input type="text" value="{{searchName}}" placeholder="请输入您要评分点学校，例如：清华大学或Tsinghua" placeholder-class="search_placeholder" bindinput="ipuText" bindfocus="inputFocus"/></view>
 			<view class="iconfont icon-icon161603"></view>
 		</view>
 	</view>
@@ -33,7 +33,7 @@
 			<view class="iconfont icon-icon161603"></view> -->
 		</view>
 		<view class="search_list" wx:if="{{searchNameList.length !== 0}}">
-			<view class="list_item" wx:for="{{searchNameList}}" wx:key="index" bindtap="selectSchool" data-school_id="{{item.id}}" data-school_name="{{item.name}}">{{ item.name }}</view>
+			<view class="list_item" wx:for="{{searchNameList}}" wx:key="index" catchtap="selectSchool" data-school_id="{{item.id}}" data-school_name="{{item.name}}">{{ item.name }}</view>
 		</view>
 	</view>
 </view>

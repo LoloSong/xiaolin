@@ -30,9 +30,9 @@ Page({
       isShowMask: true
     })
   },
-  inputBulr() {
-    this.hideMask()
-  },
+  // inputBulr() {
+  //   this.hideMask()
+  // },
   hideMask() {
     this.setData({
       isShowMask: false
@@ -54,12 +54,14 @@ Page({
     })
   },
   selectSchool(e) {
-    console.log(e.target.dataset.school_name)
+    console.log(e)
     this.setData({
       searchId: e.target.dataset.school_id,
       searchName: e.target.dataset.school_name,
-      searchNameList: []
+      searchNameList: [],
+      isShowMask: false
     })
+    console.log(this.data.searchName)
   },
   changeSwiper(e) {
     let { current } = e.detail
