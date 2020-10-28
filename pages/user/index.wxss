@@ -58,13 +58,16 @@ page {
   width: 334rpx;
   height: 70rpx;
   line-height: 70rpx;
-  margin-bottom: 30rpx;
   margin-top: 20rpx;
+  margin-bottom: 30px;
+}
+.exit-btn{
+  margin-bottom: calc(150rpx + env(safe-area-inset-bottom));
 }
 .comment_box {
-  overflow: auto;
+  /* overflow: auto; */
   width: 686rpx;
-  max-height: 500rpx;
+  /* max-height: 500rpx; */
   margin-top: 60rpx;
   margin-bottom: 20rpx;
 }
